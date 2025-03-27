@@ -41,7 +41,7 @@ public void languageselection() throws InterruptedException {
 }
 
 public void languageassertion() {
-	WebUI.waitForElementPresent(By.xpath("//span[@class=\"hide-mobi\"]/font/font[contains(.,'Buscar')]"));
+	WebUI.waitForElementPresent(By.xpath("//span[@class='hide-mobi']/font/font[contains(.,'Buscar')]"));
 	
 
 }

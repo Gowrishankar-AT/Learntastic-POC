@@ -31,8 +31,6 @@ public class Corporate_StepDefinition {
 	@Given("Groupuser hit the {string}")
 	public void user_hit_the(String url) throws InterruptedException {
 		WebUI.getURL(url);
-		
-		registrationPage.popupclose();
 	}
 	@Then("Groupuser is on the Register page")
 	public void user_is_on_the_register_page() {
@@ -89,7 +87,7 @@ public class Corporate_StepDefinition {
 	}
 	@When("GroupUser closes the PopUp Page")
 	public void user_closes_the_pop_up_page() {
-		WebElement element = WebUI.waitForElementVisible(By.xpath("//button[@class='close']"));
+		WebElement element = WebUI.waitForElementVisible(By.xpath("//button[@class='close dis-modal-close']"));
 
 		// Use JavaScript Executor to click the element
 		JavascriptExecutor js = (JavascriptExecutor) DriverManager.getDriver();

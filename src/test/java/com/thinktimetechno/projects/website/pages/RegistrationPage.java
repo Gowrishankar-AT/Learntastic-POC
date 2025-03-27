@@ -7,7 +7,7 @@ import com.thinktimetechno.keywords.WebUI;
 
 
 public class RegistrationPage {
-	 private By inputEmail = By.xpath("(//input[@id='email'])[2]");
+	 private By inputEmail = By.xpath("//input[@id='email']");
 	    private By inputPassword = By.xpath("//input[@name='password']");
 	    private By policyButton = By.xpath("//input[@name='term']");
 	    private By mobileno = By.xpath("//input[@name='mobile']");
@@ -30,6 +30,7 @@ public void register00(String fname,String lname,String email,String password,St
 	String dateTime = new java.text.SimpleDateFormat("yyyyMMddHHmmss").format(new java.util.Date());
 	String emailAddress = email.replace("johny", "johny" + dateTime);
     
+	WebUI.waitForElementPresent(firstname);
 	WebUI.setText(firstname, fname);
     WebUI.setText(lastname, lname);
 	WebUI.setText(mobileno, mobile);
@@ -74,8 +75,8 @@ public void dashboardassertion() {
 public void registerassertion() {
 	WebUI.waitForPageLoaded();
 	Assert.assertEquals(WebUI.getPageTitle(),"Register | learntastic | online courses");
-	WebUI.waitForElementVisible(By.xpath("//div[@class='modal-content']/div/button[@class='close']"));
-	WebUI.clickElement(By.xpath("//div[@class='modal-content']/div/button[@class='close']"));
+	WebUI.waitForElementVisible(By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"));
+	WebUI.clickElementWithJs(By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"));
 }
 
 public void registerassertion1() {
@@ -93,7 +94,7 @@ public void loginassertion() {
 }
 
 public void register02() {
-	WebUI.clickElement(By.xpath("//button[@class='close']"));
+	WebUI.clickElement(By.xpath("//button[@class='close dis-modal-close']"));
 	WebUI.clickElement(By.xpath("//span[contains(.,'Log In  with Google')]"));
 	
 }
@@ -116,15 +117,14 @@ public void gmailPassword() {
 }
 
 public void popupclose() {
-	WebUI.waitForElementVisible(By.xpath("//div[@class='modal-content']/div/button[@class='close']"));
-	WebUI.clickElement(By.xpath("//div[@class='modal-content']/div/button[@class='close']"));
+	WebUI.waitForElementVisible(By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"));
+	WebUI.clickElement(By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"));
 }
 
 public void joinforfree() throws InterruptedException {
-	WebUI.waitForElementVisible(By.xpath("//div[@class='modal-content']/div/button[@class='close']"));
-	WebUI.clickElement(By.xpath("//div[@class='modal-content']/div/button[@class='close']"));
-	WebUI.waitForElementClickable(By.xpath("//button[contains(text(),'Join for free')]"));
-	WebUI.clickElement(By.xpath("//button[contains(text(),'Join for free')]"));
+	WebUI.waitForElementVisible(By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"));
+	WebUI.clickElement(By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"));
+	WebUI.clickElementWithJs(By.xpath("//div[@class='home-item_desc']/descendant::button[contains(text(),'Join for free')]"));
 	
 }
 

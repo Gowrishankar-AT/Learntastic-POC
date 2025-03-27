@@ -53,6 +53,7 @@ public class SingleUser_StepDefinition {
 		    String emailAddress = data.get("Email");
 		    String password = data.get("Password");
 		    String phoneNumber = data.get("Phone Number");
+		    WebUI.waitForPageLoaded();
 		    registrationPage.register00(firstName,lastName,emailAddress,password,phoneNumber);
 	}
 	
