@@ -2,6 +2,12 @@ package com.thinktimetechno.projects.website.stepdefinitions.SingleUser;
 
 import java.util.Map;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+
+import com.thinktimetechno.driver.DriverManager;
 import com.thinktimetechno.hooks.TestContext;
 import com.thinktimetechno.keywords.WebUI;
 import com.thinktimetechno.projects.website.pages.DashboardPage;
@@ -23,6 +29,8 @@ public class SingleUser_StepDefinition {
 		loginPage=testContext.getLoginPage();
 		registrationPage=testContext.getRegistrationPage();
 	}
+	
+	//SU_TC_01
 	@Given("User hit the {string}")
 	public void user_hit_the(String url) throws InterruptedException {
 		WebUI.getURL(url);
@@ -31,6 +39,7 @@ public class SingleUser_StepDefinition {
 	@Then("User is on the Register page")
 	public void user_is_on_the_register_page() {
 		registrationPage.registerassertion();
+		WebUI.waitForPageLoaded();
 
 		
 ;	}
@@ -53,7 +62,7 @@ public class SingleUser_StepDefinition {
 		    String emailAddress = data.get("Email");
 		    String password = data.get("Password");
 		    String phoneNumber = data.get("Phone Number");
-		    WebUI.waitForPageLoaded();
+		    
 		    registrationPage.register00(firstName,lastName,emailAddress,password,phoneNumber);
 	}
 	
@@ -63,6 +72,7 @@ public class SingleUser_StepDefinition {
 	public void user_clicks_the_button() throws InterruptedException {
 		
 	  registrationPage.signIn();
+	  WebUI.waitForPageLoaded();
 	  
 	}
 	@Then("User should be logged in automatically.")
@@ -70,6 +80,8 @@ public class SingleUser_StepDefinition {
 		WebUI.waitForPageLoaded();
 		registrationPage.dashboardassertion();
    }
+	
+	
 	@Given("User hit the {string} and navigated to the LearnTastic login page")
 	public void user_hit_the_and_navigated_to_the_learn_tastic_login_page(String string) {
 		WebUI.getURL(string);
@@ -100,7 +112,7 @@ public class SingleUser_StepDefinition {
 		registrationPage.googleassertion();
 	}
 	
-	
+	//SU_TC_03
 	@When("User clicks on the {string} button on the landing page")
 	public void user_clicks_on_the_button_on_the_landing_page(String string) throws InterruptedException {
 	   registrationPage.joinforfree();
@@ -117,10 +129,9 @@ public class SingleUser_StepDefinition {
 	
 	@Then("User should be redirected to the application dashboard or appropriate page.")
 	public void user_should_be_redirected_to_the_application_dashboard_or_appropriate_page() throws InterruptedException {
-		Thread.sleep(5000);
-		registrationPage.dashboardassertion();
+		registrationPage.dashboardassertion01();
 	}
-	
+	//SU_TC_06
 	@Given("User navigate to Login Page for user {string}")
 	public void user_navigate_to_login_page_for_user(String string) {
 	    loginPage.hiturl(string);
@@ -138,6 +149,8 @@ public class SingleUser_StepDefinition {
 	public void user_is_redirected_to_the_dashboard_page() throws InterruptedException {
 	   loginPage.assertion();
 	}
+	
+	//SU_TC_05
 	@When("User selects the {string} and {string}")
 	public void user_selects_the_and(String string, String string2) {
 		dashboardPage.categoryselection();
@@ -146,7 +159,7 @@ public class SingleUser_StepDefinition {
 	public void user_able_to_see_courses_related_to_the_category_and(String s01, String s02) throws InterruptedException {
 		dashboardPage.categoryassertion(s01,s02);
 	}
- 
+//SU_TC_08
 	
 	@Then("user click on the forgotpassword link and navigated to the password recovery page")
 	public void user_click_on_the_forgotpassword_link_and_navigated_to_the_password_recovery_page() throws InterruptedException {
@@ -168,4 +181,151 @@ public class SingleUser_StepDefinition {
 	public void user_able_to_see_the_content_in_the_selected_language() {
 		dashboardPage.languageassertion();
 	}
+	//course purchase SU_TC_11
+	@When("User searches the {string} course in the search bar")
+	public void User_searches_the_course_in_the_search_bar(String courseName) throws InterruptedException {
+	  
+	  dashboardPage.search(courseName);
+	}
+	@When("User add the course in cart")
+	public void User_add_the_course_in_cart() {
+	dashboardPage.addtocart();
+	}
+	@When("User taps on the Proceed To Checkout button")
+	public void User_taps_on_the_proceed_to_checkout_button() {
+		dashboardPage.checkoutbutton();
+	  
+	}
+	@When("User enters the Discount code as {string}")
+	public void User_enters_the_discount_code_as(String code) {
+		//WebUI.setText(By.xpath("//input[@id='coupon_input']"), code);
+	    
+	    dashboardPage.discount(code);
+	}
+	@When("User enters all the checkout details:")
+	public void User_enters_all_the_checkout_details(io.cucumber.datatable.DataTable dataTable) {
+		WebUI.waitForPageLoaded();
+		Map<String, String> data = dataTable.asMap(String.class, String.class);
+	    String Cardnumber = data.get("CardNumber");
+	    String Expirationdate = data.get("ExpirationDate");
+	    String Securitycode = data.get("SecurityCode");
+	
+	    dashboardPage.carddetails(Cardnumber,Expirationdate,Securitycode);
+	}
+	@When("User Selects the Country name as {string}")
+	public void User_selects_the_country_name_as(String string) {
+	   dashboardPage.country();
+	}
+	@When("User Tap on the Pay Now button")
+	public void User_tap_on_the_pay_now_button() throws InterruptedException {
+		// Ensure you switched back from the iframe
+	   
+	    dashboardPage.paynowbutton();
+	}
+
+	@When("GroupUser should see the {string} message")
+	public void User_should_see_the_message(String string) throws InterruptedException {
+			dashboardPage.successmessage();
+			}
+
+	@When("User selects the {string} checkbox")
+	public void user_selects_the_checkbox(String string) {   
+		
+		registrationPage.checkbox();
+	}
+	@When("User clicks the Register button")
+	public void group_user_clicks_the_register_button() {
+		registrationPage.registerbutton();
+	}
+@Then("User should land on the dashboard page and Professional Information page appears")
+public void user_should_land_on_the_dashboard_page_and_professional_information_page_appears() {
+	registrationPage.dashboardassertion();
+}
+@When("User selects {string} from the Category dropdown")
+public void user_selects_from_the_category_dropdown(String category) {
+	
+	dashboardPage.categoryselection01(category);
+
+}
+@When("User selects {string} from the sub Category dropdown")
+public void user_selects_from_the_sub_category_dropdown(String subcategory) {
+	dashboardPage.subcategoryselection01(subcategory);
+
+}
+
+@When("User Taps on the save button")
+public void user_taps_on_the_save_button() {
+	  dashboardPage.savebutton();
+}
+@Then("The selected {string} category and sub Category {string} should be displayed correctly for User")
+public void the_selected_category_and_sub_category_physicians_should_be_displayed_correctly_for_user(String s1,String s2) throws InterruptedException {
+   dashboardPage.categoryassertion(s1, s2);}
+@When("User should see the {string} message")
+public void User_should_see_the_message1(String string) throws InterruptedException {
+	   dashboardPage.successmessage();
+		}
+@Given("User hits the {string}")
+public void group_user_hits_the(String url) {
+	 WebUI.getURL(url);
+}
+@Then("User is on the Online Courses and Career Opportunities page")
+public void group_user_is_on_the_register_page() {
+		registrationPage.dashboardassertion01();
+}
+@When("User closes the PopUp Page")
+public void user_closes_the_pop_up_page() {
+	
+	registrationPage.popupclose();
+}
+
+@When("User Taps on Group Discount button")
+public void user_taps_on_group_discount_button() {
+
+
+registrationPage.groupdiscount();
+}
+@Then("User lands on the Registration Page")
+public void user_lands_on_the_registration_page() {
+
+registrationPage.loginassertion01();
+}
+@When("User enters all the following details for group user:")
+public void user_enters_the_following_details_for_group_users(io.cucumber.datatable.DataTable dataTable) {
+
+	Map<String, String> data = dataTable.asMap(String.class, String.class);
+	    String firstName = data.get("FirstName");
+	    String lastName = data.get("LastName");
+	    String companyname = data.get("CompanyName");
+	    String phoneNumber = data.get("PhoneNumber");
+	    String emailid = data.get("EmailId");
+	    String password = data.get("Password");
+	    registrationPage.registergroupdetail(firstName, lastName, companyname, phoneNumber, emailid, password);
+}
+
+@Then("The selected course {string} successfully added to the cart")
+public void the_selected_course_successfully_added_to_the_cart(String string) {
+  dashboardPage.cartassertion(string);
+}
+@When("User delete the added course in the cart")
+public void user_delete_the_added_course_in_the_cart() {
+   dashboardPage.itemdelete();
+}
+@Then("The course should be deleted from the cart")
+public void the_course_should_be_deleted_from_the_cart() {
+   dashboardPage.emptycart();
+}
+
+@Then("User selects the course catalog in header")
+public void user_selects_the_course_catalog_in_header() {
+	dashboardPage.coursecataog();
+}
+@Then("The User navigated to the course catalog page")
+public void the_user_navigated_to_the_course_catalog_page() {
+    dashboardPage.catalogassertion();
+}
+//bulk purchase
+@When("User adds multiple course in cart")
+public void user_adds_multiple_course_in_cart() {
+    dashboardPage.bulkpurchase();
+}
 }

@@ -1,4 +1,4 @@
-@Fulltest
+@GroupFulltest
 Feature: Learntatstic for group user
 @C_TC_06_Language_Selection
 Scenario: TC_06 Language Selection for Group User 

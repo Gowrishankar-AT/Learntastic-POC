@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 @Test
 @CucumberOptions(
         features = "src/test/resources/features",
-        glue = {"com.thinktimetechno.projects.website.stepdefinitions.CorporateUser",
+        glue = {"com.thinktimetechno.projects.website.stepdefinitions.SingleUser",
                 "com.thinktimetechno.hooks"},
         plugin = {"com.thinktimetechno.hooks.CucumberListener",
                 "pretty",
@@ -21,10 +21,10 @@ import org.testng.annotations.Test;
                 "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
         , monochrome = true,
-        tags = "@C_TC_03_Login_with_valid_credentials"
+        tags = " @SingleFulltest"
 )
 
-public class CorporateUserTestRunner extends AbstractTestNGCucumberTests {
+public class SingleUserFullTestTestRunner extends AbstractTestNGCucumberTests {
     @Override
     @DataProvider(parallel = false)
     public Object[][] scenarios() {

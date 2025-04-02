@@ -1,4 +1,4 @@
-@Fulltest
+@SingleFulltest
 Feature: Learntastic for single user
 
 @SU_TC_05_Category_Selection

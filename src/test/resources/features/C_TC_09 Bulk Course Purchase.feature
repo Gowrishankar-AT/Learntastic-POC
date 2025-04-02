@@ -1,14 +1,14 @@
 @GroupFulltest
  Feature: Learntatstic for group GroupUser
-@C_TC_11_Add_&_Remove_Items_from_Cart_for_GroupUser
- Scenario: TC_11 Add & Remove Items from Cart for GroupUser 
+@C_TC_09_Bulk_Course_Purchase
+ Scenario: TC_09 Bulk Course Purchase from Dashboard for GroupUser 
   Given GroupUser hits the "https://staging-lms.gitview.net/"
   Then GroupUser is on the Online Courses and Career Opportunities page	
   When GroupUser closes the PopUp Page
-  When GroupUser Taps on Group Discount button
+ When GroupUser Taps on Group Discount button
   Then GroupUser lands on the Registration Page
 
-  When GroupUser enters all the following details for group user:
+When GroupUser enters all the following details for group user:
   | Field            | Value                    |
   |------------------|--------------------------|
   | FirstName        | John1                    |
@@ -23,9 +23,17 @@
   When GroupUser selects "Healthcare" from the Category dropdown
   And GroupUser selects "Physicians" from the sub Category dropdown
   And GroupUser Taps on the save button
-  Then The selected category and sub Category should be displayed correctly for GroupUser
-  When GroupUser searches the "Healthcare, First Aid & Bloodborne Pathogens Combo" course in the search bar
-  And GroupUser add the course in cart
-  Then The selected course "Healthcare, First Aid & Bloodborne Pathogens Combo" successfully added to the cart
-  When GroupUser delete the added course in the cart
-  Then The course should be deleted from the cart
+ Then The selected category and sub Category should be displayed correctly for GroupUser
+  When GroupUser adds two different courses
+  And The courses are in cart
+  And GroupUser taps on the Proceed To Checkout button
+  And GroupUser enters the Discount code as "QACOUPON10"
+  When GroupUser enters all the checkout details:
+  | Field            | Value                    |
+  |------------------|--------------------------|
+  | CardNumber        | 4242 4242 4242 4242     |
+  | ExpirationDate    | 12/27                   |
+  | SecurityCode      | 123                     | 
+  And GroupUser Selects the Country name as "India"
+  And GroupUser Tap on the Pay Now button 
+  And GroupGroupUser should see the "Thank You" message

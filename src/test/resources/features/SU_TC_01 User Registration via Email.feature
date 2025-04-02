@@ -1,4 +1,4 @@
-@Fulltest
+@SingleFulltest
 Feature: Learntatstic for single user
 
 

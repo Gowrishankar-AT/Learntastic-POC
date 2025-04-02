@@ -1,4 +1,4 @@
-@Fulltest
+@GroupFulltest
 Feature: Learntastic for Group user
 @C_TC_03_Login_with_valid_credentials
 Scenario: TC_03 Validate Group user login

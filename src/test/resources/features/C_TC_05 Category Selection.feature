@@ -1,4 +1,4 @@
-@Fulltest
+@GroupFulltest
 Feature: Learntatstic for group user
 @C_TC_05_Category_Selection
 Scenario: TC_05 Category Selection for Group User 

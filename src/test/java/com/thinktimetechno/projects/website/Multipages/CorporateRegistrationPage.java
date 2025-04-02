@@ -1,4 +1,4 @@
-package com.thinktimetechno.projects.website.pages;
+package com.thinktimetechno.projects.website.Multipages;
 
 
 import java.time.Duration;
@@ -15,7 +15,7 @@ import com.thinktimetechno.driver.DriverManager;
 import com.thinktimetechno.keywords.WebUI;
 
 
-public class RegistrationPage {
+public class CorporateRegistrationPage {
 	 private By inputEmail = By.xpath("//input[@id='email']");
 	    private By inputPassword = By.xpath("//input[@name='password']");
 	    private By policyButton = By.xpath("//input[@name='term']");
@@ -41,7 +41,7 @@ public void register00(String fname,String lname,String email,String password,St
 	String emailAddress = email.replace("johny", "johny" + dateTime);
 	
 	WebUI.waitForPageLoaded();
-	WebUI.waitForElementClickable(By.xpath("//input[@id='first_name']"));
+	WebUI.waitForElementClickable(By.xpath("//input[@name='first_name']"));
 	JavascriptExecutor js = (JavascriptExecutor) DriverManager.getDriver();
 	js.executeScript("arguments[0].value='';", WebUI.getWebElement(firstname));
    
@@ -85,21 +85,16 @@ public void dashboardassertion() {
 	Assert.assertEquals(WebUI.getPageTitle(),"Purchased courses list | Learntastic");
 
 }
-public void dashboardassertion01() {
-	WebUI.waitForPageLoaded();
-	Assert.assertEquals(WebUI.getPageTitle(),"Online Courses and Career Opportunities");
 
-}
 public void registerassertion() {
 	WebUI.waitForPageLoaded();
 	Assert.assertEquals(WebUI.getPageTitle(),"Register | learntastic | online courses");
-	WebUI.waitForElementVisible(By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"),10);
-	WebUI.clickElement(By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"));
+	WebUI.waitForElementClickable(By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"));
+	WebUI.clickElementWithJs(By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"));
 	if(WebUI.verifyElementExists(By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"))) {
 		WebUI.moveToElement(By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"));
 		WebUI.clickElementWithJs(By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"));
 	}
-	
 }
 
 public void registerassertion1() {
@@ -108,7 +103,10 @@ public void registerassertion1() {
 
 }
 
+public void dashboard01() {
+	Assert.assertEquals(WebUI.getPageTitle(),"Dashboard | Learntastic");
 
+}
 
 public void loginassertion() {
 	WebUI.waitForPageLoaded();
@@ -140,9 +138,32 @@ public void gmailPassword() {
 }
 
 public void popupclose() {
-	WebUI.waitForElementVisible(By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"),10);
-	WebUI.waitForElementClickable(By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"), 10);
-	WebUI.clickElement(By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"));
+	WebElement element = WebUI.waitForElementVisible(By.xpath("//button[@class='close dis-modal-close']"));
+
+	// Use JavaScript Executor to click the element
+	JavascriptExecutor js = (JavascriptExecutor) DriverManager.getDriver();
+	js.executeScript("arguments[0].click();", element);
+}
+
+public void groupdiscount() {
+	WebElement discount=WebUI.getWebElement(By.xpath("//a[normalize-space()='Group Discount']"));
+	JavascriptExecutor js = (JavascriptExecutor) DriverManager.getDriver();
+	js.executeScript("arguments[0].click();", discount);
+}
+
+public void groupdiscountassert() {
+	Assert.assertEquals(WebUI.getPageTitle(),"Login");
+}
+
+public void checkboxselection() {
+	WebElement termsCheckbox = WebUI.getWebElement(By.xpath("//label[contains(text(),'I agree with')]/preceding-sibling::input[@id='term']"));
+
+	JavascriptExecutor js = (JavascriptExecutor) DriverManager.getDriver();
+	js.executeScript("arguments[0].click();", termsCheckbox);
+}
+
+public void registerbutton() {
+	WebUI.clickElement(By.xpath("//button[normalize-space()='Register']"));
 }
 
 public void joinforfree() throws InterruptedException {
@@ -166,31 +187,6 @@ public void registergroupdetail(String fname,String lname,String companyname,Str
     WebUI.setText(By.xpath("//input[@name='mobile']"), mobile);
     WebUI.setText(By.xpath("(//input[@id='email'])[1]"), emailid);
     WebUI.setText(By.xpath("//input[@name='password']"), password);
-}
-
-public void registerbutton() {
-	// TODO Auto-generated method stub
-	WebUI.clickElement(By.xpath("//button[normalize-space()='Signup']"));
-}
-
-public void checkbox() {
-	// TODO Auto-generated method stub
-	WebElement termsCheckbox = WebUI.getWebElement(By.xpath("//input[@id='term']"));
-
-	JavascriptExecutor js = (JavascriptExecutor) DriverManager.getDriver();
-	js.executeScript("arguments[0].click();", termsCheckbox);
-}
-
-public void groupdiscount() {
-	// TODO Auto-generated method stub
-	WebElement discount=WebUI.getWebElement(By.xpath("//a[normalize-space()='Group Discount']"));
-	JavascriptExecutor js = (JavascriptExecutor) DriverManager.getDriver();
-	js.executeScript("arguments[0].click();", discount);
-}
-
-public void loginassertion01() {
-	// TODO Auto-generated method stub
-	Assert.assertEquals(WebUI.getPageTitle(),"Login");
 }
 
 

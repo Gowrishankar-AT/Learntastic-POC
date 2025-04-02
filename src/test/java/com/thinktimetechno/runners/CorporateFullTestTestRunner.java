@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 @Test
 @CucumberOptions(
         features = "src/test/resources/features",
-        glue = {"com.thinktimetechno.projects.website.stepdefinitions",
+        glue = {"com.thinktimetechno.projects.website.stepdefinitions.CorporateUser",
                 "com.thinktimetechno.hooks"},
         plugin = {"com.thinktimetechno.hooks.CucumberListener",
                 "pretty",
@@ -21,10 +21,10 @@ import org.testng.annotations.Test;
                 "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
         , monochrome = true,
-        tags = " @Fulltest"
+        tags = " @GroupFulltest"
 )
 
-public class FullTestTestRunner extends AbstractTestNGCucumberTests {
+public class CorporateFullTestTestRunner extends AbstractTestNGCucumberTests {
     @Override
     @DataProvider(parallel = false)
     public Object[][] scenarios() {

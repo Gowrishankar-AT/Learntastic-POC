@@ -1,4 +1,4 @@
-package com.thinktimetechno.projects.website.pages;
+package com.thinktimetechno.projects.website.Multipages;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -6,11 +6,15 @@ import org.testng.Assert;
 import com.thinktimetechno.keywords.WebUI;
 
 
-public class LoginPage {
+public class CorporateLoginPage {
 
 public  void hiturl(String url) {
 WebUI.getURL(url);
 WebUI.clickElementWithJs(By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"));
+if(WebUI.verifyElementExists(By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"))) {
+	WebUI.moveToElement(By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"));
+	WebUI.clickElementWithJs(By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"));
+}
 
 }
 

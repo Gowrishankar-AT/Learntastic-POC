@@ -1,4 +1,4 @@
-@Fulltest
+@SingleFulltest
 Feature: Learntatstic for single user
 
 @SU_TC_03_Register_via_JoinForFree

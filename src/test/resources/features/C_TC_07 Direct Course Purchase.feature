@@ -1,7 +1,7 @@
-@Fulltest
+@GroupFulltest
  Feature: Learntatstic for group GroupUser
 @C_TC_07_Direct_Course_Purchase
- Scenario: TC_07 Direct Course Purchase from Dashboard for Group GroupUser 
+ Scenario: TC_07 Direct Course Purchase from Dashboard for GroupUser 
   Given GroupUser hits the "https://staging-lms.gitview.net/"
   Then GroupUser is on the Online Courses and Career Opportunities page	
   When GroupUser closes the PopUp Page

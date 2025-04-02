@@ -1,4 +1,4 @@
-@Fulltest
+@GroupFulltest
 Feature: Learntatstic for group user
 
 
@@ -14,7 +14,7 @@ When Groupuser enters the following details for group user:
   | Email            | johndoe@thinktime.in |
   | Password         | Pass@1234           |
   | Phone Number     | 121234567890         |
-  | Invite code      | XSRB4-697f               |
+  | Invite code      | RASHM               |
   | Agree to Terms   | Yes                 |
 When Groupuser clicks the signup button
 Then Groupuser should be logged in automatically.
