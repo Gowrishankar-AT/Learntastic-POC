@@ -21,7 +21,7 @@ import org.testng.annotations.Test;
                 "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
         , monochrome = true,
-        tags = "@SU_TC_13_Bulk_Course_Purchase"
+        tags = "@SU_TC_10_Add_Remove_Items_from_Cart"
 )
 
 public class SingleUserTestRunner extends AbstractTestNGCucumberTests {

@@ -21,7 +21,7 @@ import org.testng.annotations.Test;
                 "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
         , monochrome = true,
-        tags = "@C_TC_03_Login_with_valid_credentials"
+        tags = "@C_TC_10_Payment_Failure"
 )
 
 public class CorporateUserTestRunner extends AbstractTestNGCucumberTests {

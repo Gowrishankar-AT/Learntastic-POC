@@ -328,4 +328,31 @@ public void the_user_navigated_to_the_course_catalog_page() {
 public void user_adds_multiple_course_in_cart() {
     dashboardPage.bulkpurchase();
 }
+// Failed Payment
+@When("User should see the error message for Failed payment")
+public void user_should_see_the_error_message_for_failed_payment() {
+   dashboardPage.errorassertion();
+}
+//Course Initiation
+
+@Then("User navigated to the Dashboard page")
+public void user_navigated_to_the_dashboard_page() {
+   dashboardPage.courseassertion();
+}
+@When("User clicks on Course name in dashboard")
+public void user_clicks_on_course_name_in_dashboard() {
+   dashboardPage.coursesection();
+}
+@Then("User is navigated to Course section page")
+public void user_is_navigated_to_course_section_page() {
+   dashboardPage.coursepage();
+}
+@Then("User clicks on start button")
+public void user_clicks_on_start_button() {
+    dashboardPage.startcourse();
+}
+@Then("User able to see the course material in the new tab")
+public void user_able_to_see_the_course_material_in_the_new_tab() {
+   dashboardPage.coursematerial();
+}
 }

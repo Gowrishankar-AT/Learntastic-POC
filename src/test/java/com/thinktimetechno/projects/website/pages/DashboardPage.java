@@ -188,7 +188,7 @@ public void coursecataog() {
 
 public void catalogassertion() {
 	// TODO Auto-generated method stub
-	Assert.assertEquals(WebUI.getTextElement(By.xpath("//div[@class=\"student-filter-title\"]")), "Popular Packages & Course Catalog");
+	Assert.assertEquals(WebUI.getTextElement(By.xpath("//div[@class='student-filter-title']")), "Popular Packages & Course Catalog");
 }
 
 
@@ -196,10 +196,63 @@ public void catalogassertion() {
 public void bulkpurchase() {
 	// TODO Auto-generated method stub
 	WebUI.clickElement(By.xpath("//h3[normalize-space()='Unlimited CE Subscriptions']/ancestor::div[@class='allcourses_list-item']/div[5]/div/button"));
-	WebUI.clickElement(By.xpath("//div[@id=\"cart_mini_close\"]"));
+	WebUI.clickElement(By.xpath("//div[@id='cart_mini_close']"));
 	WebUI.clickElement(By.xpath("//h3[normalize-space()='Diabetes Care Package']/ancestor::div[@class='allcourses_list-item']/div[5]/div/button"));
 	Assert.assertEquals(WebUI.getTextElement(By.xpath("//a[normalize-space()='Unlimited CE Subscriptions']")), "Unlimited CE Subscriptions");
 	Assert.assertEquals(WebUI.getTextElement(By.xpath("//a[normalize-space()='Diabetes Care Package']")), "Diabetes Care Package");
+}
+
+
+
+public void errorassertion() {
+	// TODO Auto-generated method stub
+	WebUI.waitForElementPresent(By.xpath("//div[@id='payment-message']"));
+	Assert.assertEquals(WebUI.getTextElement(By.xpath("//div[@id='payment-message']")), "Your card’s expiration year is in the past.");
+}
+
+
+
+public void courseassertion() {
+	// TODO Auto-generated method stub
+	WebUI.clickElement(By.xpath("//a[@class='thank-you_button']"));
+	WebUI.waitForPageLoaded();
+	WebUI.waitForElementPresent(By.xpath("//div[@class='td-title']"), 10);
+	Assert.assertEquals(WebUI.getTextElement(By.xpath("//div[@class='td-title']")),"Healthcare, First Aid & Bloodborne Pathogens Combo");
+	
+}
+
+
+
+public void coursesection() {
+	// TODO Auto-generated method stub
+	WebUI.clickElement(By.xpath("//div[@class='td-title']"));
+	
+	
+}
+
+
+
+public void startcourse() {
+	// TODO Auto-generated method stub
+	WebUI.clickElement(By.xpath("//a[normalize-space()='Start']"));
+}
+
+
+
+public void coursepage() {
+	// TODO Auto-generated method stub
+	WebUI.waitForPageLoaded();
+	WebUI.waitForElementPresent(By.xpath("//div[@class='learning-content']/div/div/span"), 10);
+	Assert.assertEquals(WebUI.getTextElement(By.xpath("//div[@class='learning-content']/div/div/span")),"Course-Section");
+}
+
+
+
+public void coursematerial() {
+	// TODO Auto-generated method stub
+	WebUI.switchToWindowOrTabByUrl("https://staging-lms.gitview.net/courses/understanding-mental-illness-for-all-healthcare-professionals-integrating-physical-and-mental-health-care/file/191/showHtml");
+	
+	Assert.assertEquals(WebUI.getPageTitle(),"Course-Section | Learntastic");
 }
 
 

@@ -1,7 +1,7 @@
 @SingleFulltest
  Feature: Learntatstic for group User
-@SU_TC_10_Add_&_Remove_Items_from_Cart
- Scenario: TC_10 Add & Remove Items from Cart for Single User 
+@SU_TC_10_Add_Remove_Items_from_Cart
+ Scenario: TC_10 Add and Remove Items from Cart for Single User 
  Given User hit the "https://staging-lms.gitview.net/register"
 Then User is on the Register page	
 When User enters the following details1:

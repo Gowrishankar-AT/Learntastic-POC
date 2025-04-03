@@ -247,4 +247,9 @@ public void GroupUser_should_see_the_message(String string) throws InterruptedEx
 	public void the_courses_are_in_cart() {
 		corporatedashboardPage.courseassertion();
 	}
+	//C_TC_10 Payment Failure
+	@When("GroupUser should see the error message and payment is failed")
+	public void group_user_should_see_the_error_message_and_payment_is_failed() {
+		corporatedashboardPage.errorassertion();
+	}
 }

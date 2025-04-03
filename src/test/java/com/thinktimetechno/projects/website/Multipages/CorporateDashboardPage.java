@@ -195,4 +195,11 @@ public void courseassertion() {
 }
 
 
+public void errorassertion() {
+	// TODO Auto-generated method stub
+	WebUI.waitForElementPresent(By.xpath("//div[@id='payment-message']"));
+	Assert.assertEquals(WebUI.getTextElement(By.xpath("//div[@id='payment-message']")), "Your card’s expiration year is in the past.");
+}
+
+
 }
