@@ -1,7 +1,7 @@
 @GroupFulltest
  Feature: Learntatstic for group GroupUser
-@C_TC_11_Add_&_Remove_Items_from_Cart_for_GroupUser
- Scenario: TC_11 Add & Remove Items from Cart for GroupUser 
+@C_TC_11_Add_Remove_Items_from_Cart_for_GroupUser
+ Scenario: TC_11 Add and Remove Items from Cart for GroupUser 
   Given GroupUser hits the "https://staging-lms.gitview.net/"
   Then GroupUser is on the Online Courses and Career Opportunities page	
   When GroupUser closes the PopUp Page
