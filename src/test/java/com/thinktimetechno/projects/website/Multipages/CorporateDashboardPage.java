@@ -202,4 +202,38 @@ public void errorassertion() {
 }
 
 
+public void invitebutton() {
+	// TODO Auto-generated method stub
+	WebUI.waitForElementPresent(By.xpath("//a[@class='employees-invite_student']"));
+	WebUI.clickElement(By.xpath("//a[@class='employees-invite_student']"));
+}
+
+
+public void invitepopupassertion() {
+	// TODO Auto-generated method stub
+	WebUI.waitForElementPresent(By.xpath("//h4[@id='exampleModalLabel']"));
+	Assert.assertEquals(WebUI.getTextElement(By.xpath("//h4[@id='exampleModalLabel']")),"Invite New Employee");
+	
+}
+
+
+public void InviteEmaiInput() {
+	// TODO Auto-generated method stub
+	WebUI.setText(By.xpath("//input[@name='email']"), "Shankar@thinktime.in");
+}
+
+
+public void sendInvitebutton() {
+	// TODO Auto-generated method stub
+	WebUI.clickElement(By.xpath("//button[@id='invite_employee_submit']"));
+}
+
+
+public void InviteSentassertion() {
+	// TODO Auto-generated method stub
+	WebUI.waitForElementPresent(By.xpath("//h2[@class='jq-toast-heading']"));
+	Assert.assertEquals(WebUI.getTextElement(By.xpath("//h2[@class='jq-toast-heading']")), "Success");
+}
+
+
 }

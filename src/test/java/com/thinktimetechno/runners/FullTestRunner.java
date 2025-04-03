@@ -11,8 +11,8 @@ import org.testng.annotations.Test;
 
 @Test
 @CucumberOptions(
-        features = "src/test/resources/features/GroupUser",
-        glue = {"com.thinktimetechno.projects.website.stepdefinitions.CorporateUser",
+        features = "src/test/resources/features",
+        glue = {"com.thinktimetechno.projects.website.stepdefinitions",
                 "com.thinktimetechno.hooks"},
         plugin = {"com.thinktimetechno.hooks.CucumberListener",
                 "pretty",
@@ -21,10 +21,10 @@ import org.testng.annotations.Test;
                 "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
         , monochrome = true,
-        tags = "@C_TC_13_Pending_Employees_Invites"
+        tags = "@fulltest"
 )
 
-public class CorporateUserTestRunner extends AbstractTestNGCucumberTests {
+public class FullTestRunner extends AbstractTestNGCucumberTests {
     @Override
     @DataProvider(parallel = false)
     public Object[][] scenarios() {

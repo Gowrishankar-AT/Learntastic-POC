@@ -1,4 +1,4 @@
-@GroupFulltest
+@GroupFulltest @fulltest
 Feature: Learntatstic for group user
 
 

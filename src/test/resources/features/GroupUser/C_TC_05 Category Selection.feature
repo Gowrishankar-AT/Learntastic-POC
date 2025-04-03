@@ -1,7 +1,7 @@
 @GroupFulltest
 Feature: Learntatstic for group user
-@C_TC_06_Language_Selection
-Scenario: TC_06 Language Selection for Group User 
+@C_TC_05_Category_Selection
+Scenario: TC_05 Category Selection for Group User 
 Given GroupUser hits the "https://staging-lms.gitview.net/"
 
 Then GroupUser is on the Online Courses and Career Opportunities page	
@@ -21,9 +21,10 @@ When GroupUser enters all the following details for group user:
 And GroupUser selects the "I agree with terms & rules" checkbox
 And GroupUser clicks the Register button
 Then GroupUser should land on the dashboard page and Professional Information page appears
-    When GroupUser selects "Healthcare" from the Category dropdown
-    And GroupUser selects "Physicians" from the sub Category dropdown
-    And GroupUser Taps on the save button
-     Then The selected category and sub Category should be displayed correctly for GroupUser
-When GroupUser changes the language to "Spanish"
-Then Content on the page is updated to Spanish for GroupUser
+When GroupUser selects "Healthcare" from the Category dropdown
+And GroupUser selects "Physicians" from the sub Category dropdown
+And GroupUser Taps on the save button
+Then GroupUser The selected category and sub Category should be displayed correctly for GroupUser
+
+
+  

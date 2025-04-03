@@ -23,9 +23,9 @@
   When GroupUser selects "Healthcare" from the Category dropdown
   And GroupUser selects "Physicians" from the sub Category dropdown
   And GroupUser Taps on the save button
-  Then The selected category and sub Category should be displayed correctly for GroupUser
+  Then GroupUser The selected category and sub Category should be displayed correctly for GroupUser
   When GroupUser searches the "Healthcare, First Aid & Bloodborne Pathogens Combo" course in the search bar
   And GroupUser add the course in cart
-  Then The selected course "Healthcare, First Aid & Bloodborne Pathogens Combo" successfully added to the cart
+  Then GroupUser The selected course "Healthcare, First Aid & Bloodborne Pathogens Combo" successfully added to the cart
   When GroupUser delete the added course in the cart
-  Then The course should be deleted from the cart
+  Then GroupUser The course should be deleted from the cart

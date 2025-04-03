@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 @Test
 @CucumberOptions(
-        features = "src/test/resources/features",
+        features = "src/test/resources/features/SingleUser",
         glue = {"com.thinktimetechno.projects.website.stepdefinitions.SingleUser",
                 "com.thinktimetechno.hooks"},
         plugin = {"com.thinktimetechno.hooks.CucumberListener",
@@ -21,7 +21,7 @@ import org.testng.annotations.Test;
                 "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
         , monochrome = true,
-        tags = " @SingleFulltest"
+        tags = "@SingleFulltest"
 )
 
 public class SingleUserFullTestTestRunner extends AbstractTestNGCucumberTests {

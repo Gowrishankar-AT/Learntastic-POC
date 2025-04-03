@@ -149,7 +149,7 @@ public void user_taps_on_the_save_button() {
 	 
 	  corporatedashboardPage.savebutton();
 }
-@Then("The selected category and sub Category should be displayed correctly for GroupUser")
+@Then("GroupUser The selected category and sub Category should be displayed correctly for GroupUser")
 public void the_selected_category_and_sub_category_should_be_displayed_correctly() {
 	corporatedashboardPage.categoryassertion01();
 }
@@ -207,28 +207,11 @@ public void GroupUser_tap_on_the_pay_now_button() throws InterruptedException {
     corporatedashboardPage.paynowbutton();
 }
 
-@When("GroupGroupUser should see the {string} message")
+@When("GroupUser should see the {string} message")
 public void GroupUser_should_see_the_message(String string) throws InterruptedException {
 		corporatedashboardPage.successmessage();
 		}
 
-//C_TC_11Add to cart test cases
-	@Then("The selected course {string} successfully added to the cart")
-	public void the_selected_course_successfully_added_to_the_cart(String courseName) {
-		corporatedashboardPage.cartassertion(courseName);
-		
-		
-	}
-	
-	@When("GroupUser delete the added course in the cart")
-	public void groupUser_delete_the_added_course_in_the_cart() {
-		corporatedashboardPage.removeitem();
-	}
-	@Then("The course should be deleted from the cart")
-	public void the_course_should_be_deleted_from_the_cart() {
-		corporatedashboardPage.emptycartassertion();
-    
-	}
 	//C_TC_08 Course purchase via course catalog
 	@Then("GroupUser selects the course catalog in header")
 	public void group_user_selects_the_course_catalog_in_header() {
@@ -252,4 +235,44 @@ public void GroupUser_should_see_the_message(String string) throws InterruptedEx
 	public void group_user_should_see_the_error_message_and_payment_is_failed() {
 		corporatedashboardPage.errorassertion();
 	}
+	
+	//C_TC_11Add to cart test cases
+		@Then("GroupUser The selected course {string} successfully added to the cart")
+		public void the_selected_course_successfully_added_to_the_cart(String courseName) {
+			corporatedashboardPage.cartassertion(courseName);
+			
+			
+		}
+		
+		@When("GroupUser delete the added course in the cart")
+		public void groupUser_delete_the_added_course_in_the_cart() {
+			corporatedashboardPage.removeitem();
+		}
+		@Then("GroupUser The course should be deleted from the cart")
+		public void the_course_should_be_deleted_from_the_cart() {
+			corporatedashboardPage.emptycartassertion();
+	    
+		}
+		//C_TC_12 Invite New Employees
+		@When("Groupuser click on invite new student")
+		public void groupuser_click_on_invite_new_student() {
+			corporatedashboardPage.invitebutton();
+		}
+		@When("Groupuser able to see the popup for EmailInput")
+		public void groupuser_able_to_see_the_popup_for_email_input() {
+		    corporatedashboardPage.invitepopupassertion();
+		}
+		@Then("Groupuser enters the email in the popup")
+		public void groupuser_enters_the_email_in_the_popup() {
+			corporatedashboardPage.InviteEmaiInput();
+		}
+		@Then("Groupuser clicks the send invitation button")
+		public void groupuser_clicks_the_send_invitation_button() {
+			corporatedashboardPage.sendInvitebutton();
+		}
+		@Then("Groupuser able to see the success message")
+		public void groupuser_able_to_see_the_success_message() {
+			corporatedashboardPage.InviteSentassertion();
+		}
+		//C_TC_13_Pending_Invite
 }

@@ -4,7 +4,7 @@
     <test name="Test Cucumber All Feature">
         <parameter name="BROWSER" value="chrome"/>
         <classes>
-            <class name="com.thinktimetechno.runners.FullTestRunner"/>
+            <class name="com.thinktimetechno.runners.SingleUserFullTestTestRunner"/>
 
         </classes>
     </test>

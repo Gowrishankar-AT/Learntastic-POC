@@ -223,10 +223,10 @@ public class SingleUser_StepDefinition {
 	    dashboardPage.paynowbutton();
 	}
 
-	@When("GroupUser should see the {string} message")
-	public void User_should_see_the_message(String string) throws InterruptedException {
-			dashboardPage.successmessage();
-			}
+//	@When("GroupUser should see the {string} message")
+//	public void User_should_see_the_message(String string) throws InterruptedException {
+//			dashboardPage.successmessage();
+//			}
 
 	@When("User selects the {string} checkbox")
 	public void user_selects_the_checkbox(String string) {   
@@ -333,7 +333,7 @@ public void user_adds_multiple_course_in_cart() {
 public void user_should_see_the_error_message_for_failed_payment() {
    dashboardPage.errorassertion();
 }
-//Course Initiation
+//SU_TC_15Course Initiation from Dashboard
 
 @Then("User navigated to the Dashboard page")
 public void user_navigated_to_the_dashboard_page() {
@@ -354,5 +354,22 @@ public void user_clicks_on_start_button() {
 @Then("User able to see the course material in the new tab")
 public void user_able_to_see_the_course_material_in_the_new_tab() {
    dashboardPage.coursematerial();
+}
+//SU_TC_16  Store Purchase
+@When("User clicks on store purchases in dashboard")
+public void user_clicks_on_store_purchases_in_dashboard() {
+    dashboardPage.storepurchase();
+}
+@When("User clicks on the purchase toggle button")
+public void user_clicks_on_the_purchase_toggle_button() {
+    dashboardPage.purchasetogglebutton();
+}
+@Then("User able to see the purchased course")
+public void user_able_to_see_the_purchased_course() {
+    dashboardPage.purchaseassertion();
+}
+@When("User clicks on the go to learning page")
+public void user_clicks_on_the_go_to_learning_page() {
+    dashboardPage.learningpageclick();
 }
 }

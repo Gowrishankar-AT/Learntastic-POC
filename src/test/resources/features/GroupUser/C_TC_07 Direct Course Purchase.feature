@@ -1,7 +1,7 @@
 @GroupFulltest
- Feature: Learntatstic for GroupUser
-@C_TC_10_Payment_Failure
- Scenario: TC_10 Payment Failure for Invalid Card 
+ Feature: Learntatstic for group GroupUser
+@C_TC_07_Direct_Course_Purchase
+ Scenario: TC_07 Direct Course Purchase from Dashboard for GroupUser 
   Given GroupUser hits the "https://staging-lms.gitview.net/"
   Then GroupUser is on the Online Courses and Career Opportunities page	
   When GroupUser closes the PopUp Page
@@ -23,7 +23,7 @@ When GroupUser enters all the following details for group user:
   When GroupUser selects "Healthcare" from the Category dropdown
   And GroupUser selects "Physicians" from the sub Category dropdown
   And GroupUser Taps on the save button
- Then The selected category and sub Category should be displayed correctly for GroupUser
+ Then GroupUser The selected category and sub Category should be displayed correctly for GroupUser
   When GroupUser searches the "Healthcare, First Aid & Bloodborne Pathogens Combo" course in the search bar
   And GroupUser add the course in cart
   And GroupUser taps on the Proceed To Checkout button
@@ -32,8 +32,8 @@ When GroupUser enters all the following details for group user:
   | Field            | Value                    |
   |------------------|--------------------------|
   | CardNumber        | 4242 4242 4242 4242     |
-  | ExpirationDate    | 12/24                   |
+  | ExpirationDate    | 12/27                   |
   | SecurityCode      | 123                     | 
   And GroupUser Selects the Country name as "India"
   And GroupUser Tap on the Pay Now button 
-  And GroupUser should see the error message and payment is failed
+  And GroupUser should see the "Thank You" message

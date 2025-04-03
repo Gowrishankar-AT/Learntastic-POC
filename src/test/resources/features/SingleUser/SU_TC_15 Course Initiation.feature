@@ -1,6 +1,6 @@
 @SingleFulltest
  Feature: Learntatstic for Single User
-@SU_TC_15_Course_Initiation
+@SU_TC_15_Course_Initiation_from_dashboard
  Scenario: TC_15 Course Initiation from Dashboard for User 
  Given User hit the "https://staging-lms.gitview.net/register"
 Then User is on the Register page	

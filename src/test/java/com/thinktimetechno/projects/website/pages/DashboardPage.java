@@ -256,4 +256,34 @@ public void coursematerial() {
 }
 
 
+
+public void storepurchase() {
+	// TODO Auto-generated method stub
+	WebUI.clickElement(By.xpath("//span[normalize-space()='Store Purchases']"));
+	Assert.assertEquals(WebUI.getTextElement(By.xpath("//tr/th[normalize-space()='Product Name']")), "Product Name");
+}
+
+
+
+public void purchasetogglebutton() {
+	// TODO Auto-generated method stub
+	WebUI.clickElement(By.xpath("//label[normalize-space()='Purchased']"));
+	WebUI.getTextElement(By.xpath("//div[@class='allcourses-item_bottom']/div/a[normalize-space()='Go to learning page']"));
+}
+
+
+
+public void purchaseassertion() {
+	// TODO Auto-generated method stub
+	Assert.assertEquals(WebUI.getTextElement(By.xpath("//div[@class='allcourses-item_bottom']/div/a[normalize-space()='Go to learning page']")), "Go to learning page");
+}
+
+
+
+public void learningpageclick() {
+	// TODO Auto-generated method stub
+	WebUI.clickElement(By.xpath("//div[@class='allcourses-item_bottom']/div/a[normalize-space()='Go to learning page']"));
+}
+
+
 }
