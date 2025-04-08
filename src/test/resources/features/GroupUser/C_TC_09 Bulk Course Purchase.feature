@@ -1,39 +1,46 @@
-@GroupFulltest
- Feature: Learntatstic for group GroupUser
-@C_TC_09_Bulk_Course_Purchase
- Scenario: TC_09 Bulk Course Purchase from Dashboard for GroupUser 
-  Given GroupUser hits the "https://staging-lms.gitview.net/"
-  Then GroupUser is on the Online Courses and Career Opportunities page	
-  When GroupUser closes the PopUp Page
- When GroupUser Taps on Group Discount button
-  Then GroupUser lands on the Registration Page
+@GroupUserFulltest @Fulltest
+Feature: Learntastic for GroupUser
 
-When GroupUser enters all the following details for group user:
-  | Field            | Value                    |
-  |------------------|--------------------------|
-  | FirstName        | John1                    |
-  | LastName         | Doe                      |
-  | CompanyName      | Thinktime01              | 
-  | PhoneNumber      | 121234567890             |
-  | EmailId          | Orgdemo@cpraedcourse.com |
-  | Password         | Pass@1234                |
-  And GroupUser selects the "I agree with terms & rules" checkbox
-  And GroupUser clicks the Register button
-  Then GroupUser should land on the dashboard page and Professional Information page appears
-  When GroupUser selects "Healthcare" from the Category dropdown
-  And GroupUser selects "Physicians" from the sub Category dropdown
-  And GroupUser Taps on the save button
- Then GroupUser The selected category and sub Category should be displayed correctly for GroupUser
-  When GroupUser adds two different courses
-  And The courses are in cart
-  And GroupUser taps on the Proceed To Checkout button
-  And GroupUser enters the Discount code as "QACOUPON10"
-  When GroupUser enters all the checkout details:
-  | Field            | Value                    |
-  |------------------|--------------------------|
-  | CardNumber        | 4242 4242 4242 4242     |
-  | ExpirationDate    | 12/27                   |
-  | SecurityCode      | 123                     | 
-  And GroupUser Selects the Country name as "India"
-  And GroupUser Tap on the Pay Now button 
-  And GroupUser should see the "Thank You" message
+  @C_TC_09_Bulk_Course_Purchase
+  Scenario: TC_09 Bulk Course Purchase from Dashboard for GroupUser
+    Given GroupUser navigates to "https://staging-lms.gitview.net/"
+    Then GroupUser should be on the Online Courses and Career Opportunities page
+    
+    When GroupUser closes the PopUp Page
+    And GroupUser taps on the Group Discount button
+    Then GroupUser lands on the Registration Page
+
+    When GroupUser enters all the following details for group user:
+      | Field            | Value                    |
+      |------------------|--------------------------|
+      | FirstName        | John1                    |
+      | LastName         | Doe                      |
+      | CompanyName      | Thinktime01              |
+      | PhoneNumber      | 121234567890             |
+      | EmailId          | Orgdemo@cpraedcourse.com |
+      | Password         | Pass@1234                |
+    
+    And GroupUser selects the "I agree with terms & rules" checkbox
+    And GroupUser clicks the Register button
+    Then GroupUser should land on the Dashboard page and the Professional Information page should appear
+    
+    When GroupUser selects "Healthcare" from the Category dropdown
+    And GroupUser selects "Physicians" from the Sub-Category dropdown
+    And GroupUser taps on the Save button
+    Then GroupUser should see the selected category and sub-category displayed correctly
+    
+    When GroupUser adds two different courses to the cart
+    And The courses are in the cart
+    And GroupUser taps on the Proceed To Checkout button
+    And GroupUser enters the Discount code as null
+    
+    When GroupUser enters all the checkout details:
+      | Field            | Value                    |
+      |------------------|--------------------------|
+      | CardNumber       | 4242 4242 4242 4242      |
+      | ExpirationDate   | 12/27                    |
+      | SecurityCode     | 123                      |
+    
+    And GroupUser selects the Country name as "India"
+    And GroupUser taps on the Pay Now button
+    Then GroupUser should see the "Thank You" message

@@ -1,16 +1,16 @@
-@GroupFulltest
-Feature: Learntastic for Group user
-@C_TC_13_Pending_Employees_Invites
-Scenario: TC_13 Validate Pending Employee invite 
-      #Given Groupuser navigate to Login Page for user "https://staging-lms.gitview.net/login"
-      #When Groupuser enter Username "Orgdemo@cpraedcourse.com" and click on continue button
-      #And Groupuser enter Password "123456789" and click on login button
-      #Then Groupuser is redirected to the Dashboard page
-      #When Groupuser click on "Pending Invite" under Purchased Courses
-      #And Groupuser should be navigated to the Employees page
-      #Then Groupuser click the status and see the filters
-      #And Groupuser clicks the "waiting" option
-      #Then Groupuser able to see the list of employees status "Invited"
+@GroupUserFulltest @Fulltest
+Feature: Learntastic for Group User
 
-      
-      
+  @C_TC_13_Pending_Employees_Invites
+  Scenario: TC_13 Validate Pending Employee Invite
+    Given GroupUser navigates to the Login Page for user "https://staging-lms.gitview.net/login"
+    When GroupUser enters Username "Orgdemo@cpraedcourse.com" and clicks on the continue button
+    And GroupUser enters Password "123456789" and clicks on the login button
+    Then GroupUser is redirected to the Dashboard page
+    
+    When GroupUser clicks on "Pending Invite" under Purchased Courses
+    And GroupUser should be navigated to the Employees page
+    
+    Then GroupUser clicks the status filter and sees the available options
+    And GroupUser selects the "Waiting" option
+    Then GroupUser should see the list of employees with the status "Invited"
