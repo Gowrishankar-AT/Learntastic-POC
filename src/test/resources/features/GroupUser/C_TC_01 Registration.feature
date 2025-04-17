@@ -1,5 +1,5 @@
 @GroupUserFulltest @Fulltest
-Feature: Learntastic for group user
+Feature: C_TC_01_Register_with_valid_credentials
 
   @C_TC_01_Register_with_valid_credentials
   Scenario: TC_01 Validate new user registration process for Group User

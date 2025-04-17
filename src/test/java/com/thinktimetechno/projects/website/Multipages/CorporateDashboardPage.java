@@ -118,7 +118,32 @@ public class CorporateDashboardPage {
 
 	public void PendingInvite(String string) {
 		
-		WebUI.clickElement(By.xpath("//p[normalize-space()='Pending Invite']"));
+		WebUI.clickElement(By.xpath("//p[normalize-space()='"+string+"']"));
+	}
+
+	public void profile() {
+		// TODO Auto-generated method stub
+		WebUI.clickElement(By.xpath("//a[@id='dropdownUserAction']"));
+	}
+
+	public void profileassertion() {
+		// TODO Auto-generated method stub
+		Assert.assertEquals(WebUI.getTextElement(By.xpath("//h3[@class='user-info_name']")), "Hi DEMO ORG");
+	}
+
+	public void logout() {
+		// TODO Auto-generated method stub
+		WebUI.clickElement(By.xpath("//a[@id='logout_button']"));
+	}
+
+	public void distibution() {
+		// TODO Auto-generated method stub
+		WebUI.clickElement(By.xpath("//a[normalize-space()='Distribution']"));
+	}
+
+	public void totalcertification() {
+		// TODO Auto-generated method stub
+		WebUI.clickElement(By.xpath("//p[normalize-space()='Total Certification']"));
 	}
 
 

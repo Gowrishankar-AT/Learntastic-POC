@@ -1,5 +1,5 @@
 @GroupUserFulltest @Fulltest
-Feature: Learntastic for Group User
+Feature: C_TC_15_Search_Employee_by_Name
 
   @C_TC_15_Search_Employee_by_Name
   Scenario: TC_15 Validate GroupUser Search Employees By Name

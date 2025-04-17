@@ -1,5 +1,5 @@
 @GroupUserFulltest @Fulltest
-Feature: Learntastic for Group User
+Feature: C_TC_13_Pending_Employees_Invites
 
   @C_TC_13_Pending_Employees_Invites
   Scenario: TC_13 Validate Pending Employee Invite

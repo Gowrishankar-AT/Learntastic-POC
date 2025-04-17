@@ -1,5 +1,5 @@
 @SingleUserFulltest @Fulltest
-Feature: Learntastic for Group User
+Feature: SU_TC_13_Bulk_Course_Purchase
 
   @SU_TC_13_Bulk_Course_Purchase
   Scenario: TC_13 Bulk Course Purchase from Dashboard for User

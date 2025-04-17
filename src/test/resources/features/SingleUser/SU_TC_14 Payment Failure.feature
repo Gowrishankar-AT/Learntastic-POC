@@ -1,5 +1,5 @@
 @SingleUserFulltest @Fulltest
-Feature: Learntastic for Group User
+Feature: SU_TC_14_Payment_Failure
 
   @SU_TC_14_Payment_Failure
   Scenario: TC_14 Payment Failure for Invalid Card

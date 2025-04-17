@@ -1,5 +1,5 @@
 @SingleUserFulltest @Fulltest
-Feature: Learntastic for Single User
+Feature: SU_TC_01_Register_with_valid_credentials
 
   @SU_TC_01_Register_with_valid_credentials
   Scenario: TC_01 Validate new user registration process for Single User

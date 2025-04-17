@@ -1,5 +1,5 @@
 @SingleUserFulltest @Fulltest
-Feature: Learntastic for Single User
+Feature: SU_TC_09_Language_Selection
 
   @SU_TC_09_Language_Selection
   Scenario: TC_09 Verify Language selection for Single User

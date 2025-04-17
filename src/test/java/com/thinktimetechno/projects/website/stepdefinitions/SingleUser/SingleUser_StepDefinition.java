@@ -2,6 +2,7 @@ package com.thinktimetechno.projects.website.stepdefinitions.SingleUser;
 
 import java.util.Map;
 
+import org.testng.Assert;
 
 import com.thinktimetechno.hooks.TestContext;
 import com.thinktimetechno.keywords.WebUI;
@@ -20,7 +21,9 @@ public class SingleUser_StepDefinition {
 	CoursePage coursePage;
 	PaymentPage paymentPage;
 	CartPage cartPage;
-
+	InvoicePage invoicePage;
+    StorePage storePage;
+    
 	public SingleUser_StepDefinition(TestContext testContext) {
 		dashboardPage = testContext.getDashboardPage();
 		loginPage = testContext.getLoginPage();
@@ -28,6 +31,8 @@ public class SingleUser_StepDefinition {
 		cartPage = testContext.getCartPage();
 		paymentPage = testContext.getPaymentPage();
 		coursePage = testContext.getCoursePage();
+		invoicePage = testContext.getInvoicePage();
+		storePage = testContext.getStorePage();
 	}
 
 	// SU_TC_01
@@ -165,7 +170,7 @@ public class SingleUser_StepDefinition {
 	// SU_TC_05
 	@When("User selects the {string} category and {string} subcategory")
 	public void user_selects_the_and(String string, String string2) {
-		dashboardPage.categoryselection();
+		dashboardPage.categoryselection(string,string2);
 	}
 
 	@Then("User should see courses related to the {string} category and {string} subcategory")
@@ -412,5 +417,194 @@ public class SingleUser_StepDefinition {
 	@When("User clicks on the Go to Learning button")
 	public void user_clicks_on_the_go_to_learning_page() {
 		dashboardPage.learningpageclick();
+	}
+	
+	//C_TC_17
+	@When("User clicks on the profile")
+	public void user_clicks_on_the_profile() {
+	   dashboardPage.profile();
+	}
+	@When("User able to see the dropdown")
+	public void user_able_to_see_the_dropdown() {
+	    dashboardPage.profileassertion();
+	}
+	@When("User clicks on the logout in dropdown")
+	public void user_clicks_on_the_logout_in_dropdown() {
+	    dashboardPage.logout();
+	}
+	@Then("User navigates to the homepage")
+	public void user_navigates_to_the_homepage() {
+	    registrationPage.registerassertion1();
+	}
+	//SU_TC_18
+	@Then("User should be able to see the course material in the new tab1")
+	public void user_able_to_see_the_course_material_in_the_new_tab1() {
+		coursePage.coursematerial1();
+	}
+	
+	@Then("User is navigated to the Course section page1")
+	public void user_is_navigated_to_course_section_page1() {
+		coursePage.coursepage1();
+	}
+	@When("User navigates to the bottom and clicks on Quiz")
+	public void user_navigates_to_the_bottom_and_clicks_on_quiz() throws InterruptedException {
+		coursePage.quizbutton();
+	}
+	@When("User clicks on the start quiz button")
+	public void user_clicks_on_the_start_quiz_button() {
+		coursePage.startquizbutton();
+	}
+	@Then("User able to see the Questions for the quiz")
+	public void user_able_to_see_the_questions_for_the_quiz() {
+	    coursePage.questions();
+	}
+	@When("User attends all the questions")
+	public void user_attends_all_the_questions() throws InterruptedException {
+	    coursePage.quizattend();
+	}
+	@When("User able to see the score")
+	public void user_able_to_see_the_score() {
+	    coursePage.scoreassertion();
+	}
+	@When("User clicks on exitcourse button")
+	public void user_clicks_on_exitcourse_button() {
+	   coursePage.exitcoursebutton();
+	}
+	@Then("User is navigated to the dashboard page and result is updated")
+	public void user_is_navigated_to_the_dashboard_page_and_result_is_updated() {
+	    dashboardPage.resultassertion();
+	}
+
+	
+	//SU_TC_19
+	@When("User clicks on the invoice in dropdown")
+	public void user_clicks_on_the_invoice_in_dropdown() {
+		dashboardPage.invoice();
+	}
+	@Then("User navigates to the invoice page")
+	public void user_navigates_to_the_invoice_page() {
+	   
+	    invoicePage.invoiceassertion();
+	}
+	@Then("User enters the coursename {string} in the search bar")
+	public void user_enters_the_coursename_in_the_search_bar(String string) {
+	    invoicePage.search(string);
+	}
+	@Then("User clicks the search button")
+	public void user_clicks_the_search_button() {
+	    invoicePage.searchbutton();
+	}
+	@Then("User should see the course with the related name")
+	public void user_should_see_the_course_with_the_related_name() {
+	    invoicePage.invoiceassertion1();
+	}
+	@When("User clicks on the ViewInvoice under Action")
+	public void user_clicks_on_the_view_invoice_under_action() {
+	    invoicePage.details();
+	}
+	@Then("User able to see the Invoice popup displayed")
+	public void user_able_to_see_the_invoice_popup_displayed() {
+	    invoicePage.popupassertion();
+	}
+	@When("User clicks on the Download PDF button")
+	public void user_clicks_on_the_download_pdf_button() {
+	   invoicePage.downloadbutton();
+	}
+	@Then("User clicks on the close button")
+	public void user_clicks_on_the_close_button() throws InterruptedException {
+		Thread.sleep(1000);
+	    invoicePage.close();
+	}
+	//SU_TC_20
+	@When("User clicks on the more options")
+	public void user_clicks_on_the_more_options() {
+	    dashboardPage.moreoptions();
+	}
+	@When("User clicks on the clicks on download certificate")
+	public void user_clicks_on_the_clicks_on_download_certificate() {
+		dashboardPage.downloadcertificate();
+	}
+	@Then("User able to see the downloaded certificate")
+	public void user_able_to_see_the_downloaded_certificate() {
+	    dashboardPage.certificateassertion();
+	}
+	
+	//SU_TC_21
+	
+	@When("User clicks on the clicks on download ce certificate")
+	public void user_clicks_on_the_clicks_on_download_wallet_card() {
+		dashboardPage.downloadwalletcard();
+	}
+	
+	@Then("User able to see the popup")
+	public void user_able_to_see_the_popup() {
+	    dashboardPage.popupassertion();
+	}
+	@When("User enters the details of the popup")
+	public void user_enters_the_details_of_the_popup() {
+	    dashboardPage.popupquestions();
+	}
+	@When("User enters the submit button")
+	public void user_enters_the_submit_button() {
+	    dashboardPage.submitbutton();
+	}
+	@Then("User able to see the download")
+	public void user_able_to_see_the_download() {
+		WebUI.switchToWindowOrTabByTitle("Download CE Certificate");
+	    Assert.assertEquals(WebUI.getPageTitle(), "Download CE Certificate");
+	}
+	
+	//SU_TC_22
+	@When("User clicks on the store in header")
+	public void user_clicks_on_the_store_in_header() {
+	    dashboardPage.storeitems();
+	}
+	@Then("User navigated to the stores page")
+	public void user_navigated_to_the_stores_page() {
+	    storePage.assertion();
+	}
+	@When("User clicks on the desired item and selects the course")
+	public void user_clicks_on_the_desired_item_and_selects_the_course() {
+	    storePage.storeitem();
+	}
+	@When("User selects the desired Quantity and clicks on add to cart")
+	public void user_selects_the_desired_quantity_and_clicks_on_add_to_cart() {
+	    storePage.quantity();
+	}
+	@Then("User navigated to the cart page")
+	public void user_navigated_to_the_cart_page() {
+	    cartPage.cartassertion("CE Certificate");
+	}
+	
+	//C_TC_24
+	@When("User clicks on the desired session and selects the course")
+	public void user_clicks_on_the_desired_session_and_selects_the_course() {
+	    storePage.storeitem1();
+	}
+	@When("User selects the desired Quantity and clicks on add to cart1")
+	public void user_selects_the_desired_quantity_and_clicks_on_add_to_cart1() {
+	    storePage.quantity1();
+	}
+	@Then("User navigated to the cart page1")
+	public void user_navigated_to_the_cart_page1() {
+	    cartPage.cartassertion("The virtual review session");
+	}
+	//C_TC_25
+	@When("User clicks on the clicks on virtual review")
+	public void user_clicks_on_the_clicks_on_virtual_review() {
+		dashboardPage.virtualreview();
+	}
+	
+	@When ("User selects date and time")
+	public void user_selects_date_and_time() {
+		dashboardPage.date();
+	}
+	@Given("User selects the details for payment")
+	public void user_selects_the_details_for_payment() {
+	   dashboardPage.details();
+	}
+	@Then("User schedules the training")
+	public void user_schedules_the_training() {
+	    cartPage.virtual();
 	}
 }

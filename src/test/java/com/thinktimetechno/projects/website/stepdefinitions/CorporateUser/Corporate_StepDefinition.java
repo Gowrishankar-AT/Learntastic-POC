@@ -17,6 +17,8 @@ public class Corporate_StepDefinition {
 	CorporateCartPage corporatecartPage;
 	CorporatePaymentPage corporatepaymentPage;
 	CorporateEmployeePage corporateemployeePage;
+	CorporateInvoicePage corporateinvoicePage;
+	CorporateDistributionPage corporatedistributionPage;
 
 	public Corporate_StepDefinition(TestContext testContext) {
 		corporatedashboardPage = testContext.getCorporateDashboardPage();
@@ -25,7 +27,8 @@ public class Corporate_StepDefinition {
 		corporatecartPage = testContext.getCorporateCartPage();
 		corporatepaymentPage = testContext.getCorporatePaymentPage();
 		corporateemployeePage = testContext.getCorporateEmployeePage();
-
+        corporateinvoicePage = testContext.getCorporateInvoicePage();
+        corporatedistributionPage = testContext.getCorporateDistributionPage();
 	}
 	// C-TC_01
 
@@ -128,8 +131,8 @@ public class Corporate_StepDefinition {
 		corporateregistrationPage.registergroupdetail(firstName, lastName, companyname, phoneNumber, emailid, password);
 	}
 
-	@When("GroupUser selects the {string} checkbox")
-	public void user_selects_the_checkbox(String string) {
+	@When("GroupUser selects the I agree with terms & rules checkbox")
+	public void user_selects_the_checkbox() {
 
 		corporateregistrationPage.checkboxselection();
 	}
@@ -230,7 +233,7 @@ public class Corporate_StepDefinition {
 	
 	@Then("GroupUser should see the {string} message")
 	public void GroupUser_should_see_the_message(String string) throws InterruptedException {
-		corporatepaymentPage.successmessage();
+		corporatepaymentPage.successmessage(string);
 	}
 
 	// C_TC_08 Course purchase via course catalog
@@ -376,5 +379,129 @@ public class Corporate_StepDefinition {
 	public void groupuser_able_to_see_the_list_of_all_employees() {
 	    
 		corporateemployeePage.employeelist();
+	}
+	//C_TC_18 Logout
+	@When("GroupUser clicks on the profile")
+	public void group_user_clicks_on_the_profile() {
+	   corporatedashboardPage.profile();
+	}
+	@When("GroupUser able to see the dropdown")
+	public void group_user_able_to_see_the_dropdown() {
+	    corporatedashboardPage.profileassertion();
+	}
+	@When("GroupUser clicks on the logout in dropdown")
+	public void group_user_clicks_on_the_logout_in_dropdown() {
+	    corporatedashboardPage.logout();
+	}
+	@Then("GroupUser navigates to the homepage")
+	public void group_user_navigates_to_the_homepage() {
+	    corporateregistrationPage.registerassertion1();
+	}
+	//C_TC_19
+	
+	
+	@When("GroupUser clicks on {string} under Purchased Codes")
+	public void groupuser_click_on_under_purchased_codes(String string) {
+	    
+	   corporateinvoicePage.invoice(string);
+	}
+	
+	@Then("GroupUser should be navigated to the Invoice page")
+	public void groupuser_should_be_navigated_to_the_invoice_page() {
+	    
+		corporateinvoicePage.invoiceassertion();
+	}
+	
+	@Given("GroupUser enters the coursename {string} in the search bar")
+	public void group_user_enters_the_coursename_in_the_search_bar(String string) {
+		corporateinvoicePage.coursename(string);
+	}
+	@Then("GroupUser should see the course with the related name")
+	public void group_user_should_see_the_course_with_the_related_name() {
+		corporateinvoicePage.courseassertion();
+	}
+	@When("GroupUser clicks on the ViewInvoice under Action")
+	public void group_user_clicks_on_the_view_invoice_under_action() {
+		corporateinvoicePage.viewinvoice();
+	}
+	@Then("GroupUser able to see the Invoice popup displayed")
+	public void group_user_able_to_see_the_invoice_popup_displayed() {
+		corporateinvoicePage.popupassertion();
+	}
+	@When("GroupUser clicks on the Download PDF button")
+	public void group_user_clicks_on_the_download_pdf_button() {
+		corporateinvoicePage.download();
+	}
+	@Then("GroupUser clicks on the close button")
+	public void group_user_clicks_on_the_close_button() {
+		corporateinvoicePage.close();
+	}
+	//C_TC_20
+	@When("GroupUser taps on paylater option")
+	public void group_user_taps_on_paylater_option() {
+	    corporatecartPage.paylater();
+	}
+	@Then("GroupUser is navigated to the invoice page")
+	public void group_user_is_navigated_to_the_invoice_page() {
+	    corporateinvoicePage.invoiceassertion();
+	}
+	@When("GroupUser clicks on the complete payment button")
+	public void group_user_clicks_on_the_complete_payment_button() {
+		corporateinvoicePage.completepayment();
+	}
+	@When("GroupUser enters the Discount code as {string}")
+	public void group_user_enters_the_discount_code_as(String string) {
+		corporatecartPage.discountcode(string);
+	}
+//C_TC_21
+	@Given("GroupUser is redirected to dashboard")
+	public void group_user_is_redirected_to_dashboard() {
+	    corporatepaymentPage.dashboardbutton();
+	}
+	@When("GroupUser clicks on the distribution in header")
+	public void group_user_clicks_on_the_distribution_in_header() {
+	    corporatedashboardPage.distibution();
+	}
+	@Then("GroupUser is redirected to distribution page")
+	public void group_user_is_redirected_to_distribution_page() {
+		corporatedistributionPage.assertion();
+	}
+	@When("GroupUser clicks on the assign code")
+	public void group_user_clicks_on_the_assign_code() {
+		corporatedistributionPage.assigncode();
+	}
+	@When("GroupUser selects the purchase code and employee")
+	public void group_user_selects_the_purchase_code_and_employee() {
+		corporatedistributionPage.codesassign();
+	}
+	@When("GroupUser selects the Assign code and save changes")
+	public void group_user_selects_the_assign_code_and_save_changes() {
+		corporatedistributionPage.save();
+	}
+	@Then("GroupUser able to see the course assigned to the employee")
+	public void group_user_able_to_see_the_course_assigned_to_the_employee() {
+		corporatedistributionPage.assertion1();
+	}
+	
+// C_TC_22
+	@When("GroupUser clicks on the Copy Management under the Total Certification")
+	public void group_user_clicks_on_the_copy_management_under_the_total_certification() {
+		corporatedashboardPage.totalcertification();
+	}
+	@Then("GroupUser is navigated to the Total Certification page")
+	public void group_user_is_navigated_to_the_total_certification_page() {
+		corporatedistributionPage.assertiontotal();
+	}
+	@When("GroupUser searches the employee name in search bar")
+	public void group_user_searches_the_employee_name_in_search_bar() {
+		corporatedistributionPage.searchbar();
+	}
+	@When("GroupUser enters the search button")
+	public void group_user_enters_the_search_button() {
+		corporatedistributionPage.button();
+	}
+	@Then("GroupUser able to see the employees")
+	public void group_user_able_to_see_the_employees() {
+		corporatedistributionPage.assertionemployee();
 	}
 }

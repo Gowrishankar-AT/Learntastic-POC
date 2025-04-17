@@ -44,4 +44,9 @@ public class CartPage {
 		Assert.assertEquals(WebUI.getTextElement(By.xpath("//a[normalize-space()='Diabetes Care Package']")),
 				"Diabetes Care Package");
 	}
+
+	public void virtual() {
+		// TODO Auto-generated method stub
+		Assert.assertEquals(WebUI.getTextElement(By.xpath("//div[normalize-space()='A calendar invitation has been sent to your email address.']")), "A calendar invitation has been sent to your email address.");
+	}
 }

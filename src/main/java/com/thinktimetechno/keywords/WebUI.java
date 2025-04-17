@@ -30,10 +30,8 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.HasDevTools;
-//import org.openqa.selenium.devtools.v120.network.Network;
-//import org.openqa.selenium.devtools.v120.network.model.Headers;
-//import org.openqa.selenium.devtools.v121.network.Network;
-//import org.openqa.selenium.devtools.v122.network.model.Headers;
+import org.openqa.selenium.devtools.v114.network.Network;
+import org.openqa.selenium.devtools.v114.network.model.Headers;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.print.PrintOptions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -252,28 +250,27 @@ public class WebUI {
     @Step("Get to URL {0} with authentication")
     public static void getToUrlAuthentication(String url, String username, String password) {
         // Get the devtools from the running driver and create a session
-//        DevTools devTools = ((HasDevTools) DriverManager.getDriver()).getDevTools();
-//        devTools.createSession();
-//
-//        // Enable the Network domain of devtools
-//        devTools.send(Network.enable(Optional.of(100000), Optional.of(100000), Optional.of(100000)));
-//        String auth = username + ":" + password;
-//
-//       // Encoding the username and password using Base64 (java.util)
-//        String encodeToString = Base64.getEncoder().encodeToString(auth.getBytes());
-//
-//        // Pass the network header -> Authorization : Basic <encoded String>
-//        Map<String, Object> headers = new HashMap<>();
-//        headers.put("Authorization", "Basic " + encodeToString);
-//        devTools.send(Network.setExtraHTTPHeaders(new Headers(headers)));
-//
-//        LogUtils.info("getToUrlAuthentication with URL: " + url);
-//        LogUtils.info("getToUrlAuthentication with Username: " + username);
-//        LogUtils.info("getToUrlAuthentication with Password: " + password);
-//        // Load the application url
-//        getURL(url);
-//        Uninterruptibles.sleepUninterruptibly(Duration.ofSeconds(3));
-    	DriverManager.getDriver().get("https://"+username+":"+password+"@"+url);
+        DevTools devTools = ((HasDevTools) DriverManager.getDriver()).getDevTools();
+        devTools.createSession();
+
+        // Enable the Network domain of devtools
+        devTools.send(Network.enable(Optional.of(100000), Optional.of(100000), Optional.of(100000)));
+        String auth = username + ":" + password;
+
+        // Encoding the username and password using Base64 (java.util)
+        String encodeToString = Base64.getEncoder().encodeToString(auth.getBytes());
+
+        // Pass the network header -> Authorization : Basic <encoded String>
+        Map<String, Object> headers = new HashMap<>();
+        headers.put("Authorization", "Basic " + encodeToString);
+        devTools.send(Network.setExtraHTTPHeaders(new Headers(headers)));
+
+        LogUtils.info("getToUrlAuthentication with URL: " + url);
+        LogUtils.info("getToUrlAuthentication with Username: " + username);
+        LogUtils.info("getToUrlAuthentication with Password: " + password);
+        // Load the application url
+        getURL(url);
+        Uninterruptibles.sleepUninterruptibly(Duration.ofSeconds(3));
     }
 
     /**
@@ -2158,36 +2155,8 @@ public class WebUI {
         JavascriptExecutor js = (JavascriptExecutor) DriverManager.getDriver();
 //        js.executeScript("arguments[0].scrollIntoView(false);", getWebElement(by));
         js.executeScript("arguments[0].scrollIntoView(true);", getWebElement(by));
-       
         //Click with JS
-       js.executeScript("arguments[0].click();", getWebElement(by));
-
-
-        LogUtils.info("Click on element with JS: " + by);
-        if (ExtentTestManager.getExtentTest() != null) {
-            ExtentReportManager.pass("Click on element with JS: " + by);
-        }
-        AllureManager.saveTextLog("Click on element with JS: " + by);
-        addScreenshotToReport(Thread.currentThread().getStackTrace()[1].getMethodName() + "_" + DateUtils.getCurrentDateTime());
-
-    }
-   /**
- * @param by Hari, (By , String)
- */
-
-   
-
-    @Step("ClickanScroll on the element by Javascript {0}")
-    public static void clickScrollElementWithJs(By by) {
-        waitForElementPresent(by);
-        //Scroll to element với Javascript Executor`
-        JavascriptExecutor js = (JavascriptExecutor) DriverManager.getDriver();
-//        js.executeScript("arguments[0].scrollIntoView(false);", getWebElement(by));
-        js.executeScript("arguments[0].scrollIntoView(true);", getWebElement(by));
-         
-        //Click with JS
-//       js.executeScript("arguments[0].click();", getWebElement(by));
-          clickElement(by);
+        js.executeScript("arguments[0].click();", getWebElement(by));
 
         LogUtils.info("Click on element with JS: " + by);
         if (ExtentTestManager.getExtentTest() != null) {
@@ -2447,7 +2416,7 @@ public class WebUI {
         waitForElementPresent(by);
 
         try {
-            WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(WAIT_EXPLICIT), Duration.ofMillis(500));
+            WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(WAIT_EXPLICIT), Duration.ofMillis(1000));
             boolean check = isElementVisible(by, 1);
             if (check == true) {
                 return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
@@ -2694,5 +2663,7 @@ public class WebUI {
         }
 
     }
+
+	
 
 }

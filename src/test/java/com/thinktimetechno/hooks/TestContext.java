@@ -8,6 +8,8 @@ import com.thinktimetechno.projects.website.pages.RegistrationPage;
 import com.thinktimetechno.projects.website.pages.CartPage;
 import com.thinktimetechno.projects.website.pages.CoursePage;
 import com.thinktimetechno.projects.website.pages.PaymentPage;
+import com.thinktimetechno.projects.website.pages.InvoicePage;
+import com.thinktimetechno.projects.website.pages.StorePage;
 import com.thinktimetechno.projects.website.Multipages.*;
 import com.thinktimetechno.utils.LogUtils;
 import org.openqa.selenium.WebDriver;
@@ -32,13 +34,16 @@ public class TestContext {
 	private CartPage cartPage;
 	private CoursePage coursePage;
 	private PaymentPage paymentPage;
+	private InvoicePage invoicePage;
+	private StorePage storePage;
 	private CorporateLoginPage corporateloginPage;
 	private CorporateDashboardPage corporatedashboardPage;
 	private CorporateRegistrationPage corporateregistrationPage;
 	private CorporateCartPage corporatecartPage;
 	private CorporatePaymentPage corporatepaymentPage;
 	private CorporateEmployeePage corporateemployeePage;
-
+    private CorporateInvoicePage corporateinvoicePage;
+    private CorporateDistributionPage corporatedistributionPage;
 	public WebDriver getDriver() {
 		return DriverManager.getDriver();
 	}
@@ -52,6 +57,13 @@ public class TestContext {
 		return dashboardPage;
 	}
 
+	public StorePage getStorePage() {
+		if (storePage == null) {
+			storePage = new StorePage();
+		}
+		return storePage;
+	}
+	
 	public LoginPage getLoginPage() {
 		if (loginPage == null) {
 			loginPage = new LoginPage();
@@ -64,6 +76,13 @@ public class TestContext {
 			registrationPage = new RegistrationPage();
 		}
 		return registrationPage;
+	}
+	
+	public InvoicePage getInvoicePage() {
+		if (invoicePage == null) {
+			invoicePage = new InvoicePage();
+		}
+		return invoicePage;
 	}
 	
 	public CartPage getCartPage() {
@@ -114,11 +133,25 @@ public class TestContext {
 		return corporatepaymentPage;
 	}
 
+	public CorporateDistributionPage getCorporateDistributionPage() {
+		if (corporatedistributionPage == null) {
+			corporatedistributionPage = new CorporateDistributionPage();
+		}
+		return corporatedistributionPage;
+	}
+	
 	public CorporateEmployeePage getCorporateEmployeePage() {
 		if (corporateemployeePage == null) {
 			corporateemployeePage = new CorporateEmployeePage();
 		}
 		return corporateemployeePage;
+	}
+	
+	public CorporateInvoicePage getCorporateInvoicePage() {
+		if (corporateinvoicePage == null) {
+			corporateinvoicePage = new CorporateInvoicePage();
+		}
+		return corporateinvoicePage;
 	}
 
 	public CorporateCartPage getCorporateCartPage() {

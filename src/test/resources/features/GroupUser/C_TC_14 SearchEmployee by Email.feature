@@ -1,5 +1,5 @@
 @GroupUserFulltest @Fulltest
-Feature: Learntastic for Group User
+Feature: C_TC_14_Search_Employee_by_Email
 
   @C_TC_14_Search_Employee_by_Email
   Scenario: TC_14 Validate GroupUser Search Employees By Email

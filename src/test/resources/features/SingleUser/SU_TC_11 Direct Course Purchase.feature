@@ -1,5 +1,5 @@
 @SingleUserFulltest @Fulltest
-Feature: Learntastic for Group User
+Feature: SU_TC_11_Direct_Course_Purchase
 
   @SU_TC_11_Direct_Course_Purchase
   Scenario: TC_11 Direct Course Purchase from Dashboard for User

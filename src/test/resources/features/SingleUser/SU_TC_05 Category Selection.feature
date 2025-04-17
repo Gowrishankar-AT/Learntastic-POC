@@ -1,5 +1,5 @@
 @SingleUserFulltest @Fulltest
-Feature: Learntastic for Single User
+Feature: SU_TC_05_Category_Selection
 
   @SU_TC_05_Category_Selection
   Scenario: TC_05 Category Selection for Single User

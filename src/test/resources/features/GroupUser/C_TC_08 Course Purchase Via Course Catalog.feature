@@ -1,5 +1,5 @@
 @GroupUserFulltest @Fulltest
-Feature: Learntastic for GroupUser
+Feature: C_TC_08_Course_Purchase_via_Course_Catalog
 
   @C_TC_08_Course_Purchase_via_Course_Catalog
   Scenario: TC_08 Course Purchase via Course Catalog for GroupUser
@@ -20,7 +20,7 @@ Feature: Learntastic for GroupUser
       | EmailId          | Orgdemo@cpraedcourse.com |
       | Password         | Pass@1234                |
     
-    And GroupUser selects the "I agree with terms & rules" checkbox
+    And GroupUser selects the I agree with terms & rules checkbox
     And GroupUser clicks the Register button
     Then GroupUser should land on the Dashboard page and the Professional Information page should appear
     

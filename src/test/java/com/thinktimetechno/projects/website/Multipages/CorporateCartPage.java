@@ -55,4 +55,15 @@ public void emptycartassertion() {
 	Assert.assertTrue(isCartEmpty, "The cart is not empty, course not deleted!");
 }
 
+public void paylater() {
+	// TODO Auto-generated method stub
+	WebUI.clickElement(By.xpath("//a[@id='payLaterLink']"));
+}
+
+public void discountcode(String string) {
+	// TODO Auto-generated method stub
+	WebUI.setText(By.xpath("//input[@id='coupon_input']"), string);
+	WebUI.clickElementWithJs(By.xpath("//button[@id='btn_submit_cart']"));
+}
+
 }

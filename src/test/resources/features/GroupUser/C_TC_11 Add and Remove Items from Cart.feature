@@ -1,5 +1,5 @@
 @GroupUserFulltest @Fulltest
-Feature: Learntastic for GroupUser
+Feature: C_TC_11_Add_Remove_Items_from_Cart_for_GroupUser
 
   @C_TC_11_Add_Remove_Items_from_Cart_for_GroupUser
   Scenario: TC_11 Add and Remove Items from Cart for GroupUser
@@ -20,7 +20,7 @@ Feature: Learntastic for GroupUser
       | EmailId          | Orgdemo@cpraedcourse.com |
       | Password         | Pass@1234                |
     
-    And GroupUser selects the "I agree with terms & rules" checkbox
+    And GroupUser selects the I agree with terms & rules checkbox
     And GroupUser clicks the Register button
     Then GroupUser should land on the Dashboard page and the Professional Information page should appear
     

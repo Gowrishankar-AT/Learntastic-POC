@@ -1,0 +1,50 @@
+@GroupUserFulltest @Fulltest
+Feature: C_TC_20_Paylater_Payment_Option
+
+  @C_TC_20_Paylater_Payment_Option
+  Scenario: TC_20 Paylater option Course Purchase from Dashboard for GroupUser
+    Given GroupUser navigates to "https://staging-lms.gitview.net/"
+    Then GroupUser should be on the Online Courses and Career Opportunities page
+    
+    When GroupUser closes the PopUp Page
+    And GroupUser taps on the Group Discount button
+    Then GroupUser lands on the Registration Page
+
+    When GroupUser enters all the following details for group user:
+      | Field            | Value                    |
+      |------------------|--------------------------|
+      | FirstName        | John1                    |
+      | LastName         | Doe                      |
+      | CompanyName      | Thinktime01              |
+      | PhoneNumber      | 121234567890             |
+      | EmailId          | Orgdemo@cpraedcourse.com |
+      | Password         | Pass@1234                |
+    
+    And GroupUser selects the I agree with terms & rules checkbox
+    And GroupUser clicks the Register button
+    Then GroupUser should land on the Dashboard page and the Professional Information page should appear
+    
+    When GroupUser selects "Healthcare" from the Category dropdown
+    And GroupUser selects "Physicians" from the Sub-Category dropdown
+    And GroupUser taps on the Save button
+    Then GroupUser should see the selected category and sub-category displayed correctly
+    
+    When GroupUser searches for the "Healthcare, First Aid & Bloodborne Pathogens Combo" course in the search bar
+    And GroupUser adds the course to the cart
+    And GroupUser taps on the Proceed To Checkout button
+    
+    When GroupUser taps on paylater option 
+    Then GroupUser is navigated to the invoice page
+    When GroupUser clicks on the complete payment button
+    And GroupUser enters the Discount code as "QAPERCENT20"
+    
+    When GroupUser enters all the checkout details:
+      | Field            | Value                    |
+      |------------------|--------------------------|
+      | CardNumber       | 4242 4242 4242 4242      |
+      | ExpirationDate   | 12/27                    |
+      | SecurityCode     | 123                      |
+    
+    And GroupUser selects the Country name as "India"
+    And GroupUser taps on the Pay Now button
+    Then GroupUser should see the "Thank You" message

@@ -1,5 +1,5 @@
 @GroupUserFulltest @Fulltest
-Feature: Learntastic for Group User
+Feature: C_TC_16_View_all_Employees
 
   @C_TC_16_View_all_Employees
   Scenario: TC_16 Validate GroupUser can see all Employees

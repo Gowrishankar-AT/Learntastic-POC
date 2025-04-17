@@ -1,5 +1,5 @@
 @SingleUserFulltest @Fulltest
-Feature: Learntastic for Group User
+Feature: SU_TC_10_Add_Remove_Items_from_Cart
 
   @SU_TC_10_Add_Remove_Items_from_Cart
   Scenario: TC_10 Add and Remove Items from Cart for Single User

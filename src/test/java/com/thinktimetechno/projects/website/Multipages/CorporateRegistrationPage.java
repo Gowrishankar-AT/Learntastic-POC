@@ -83,9 +83,9 @@ public class CorporateRegistrationPage {
 	public void registerassertion() {
 		WebUI.waitForPageLoaded();
 		Assert.assertEquals(WebUI.getPageTitle(), "Register | learntastic | online courses");
-		WebUI.waitForElementClickable(
-				By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"));
-		WebUI.clickElementWithJs(By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"));
+//		WebUI.waitForElementClickable(
+//				By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"));
+//		WebUI.clickElementWithJs(By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"));
 		if (WebUI.verifyElementExists(
 				By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"))) {
 			WebUI.moveToElement(By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"));

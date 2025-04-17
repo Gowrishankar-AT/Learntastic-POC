@@ -49,11 +49,11 @@ public class CorporatePaymentPage {
 		WebUI.waitForPageLoaded();
 	}
 	
-public void successmessage() {
+public void successmessage(String string) {
 		
 		WebUI.waitForPageLoaded();
 		WebUI.waitForElementPresent(By.xpath("//div[@class='thank-you_title']"));
-		Assert.assertEquals(WebUI.getPageTitle().trim(), "Thank You");
+		Assert.assertEquals(WebUI.getPageTitle().trim(), string);
 
 	}
 
@@ -62,5 +62,10 @@ public void errorassertion() {
 	WebUI.waitForElementPresent(By.xpath("//div[@id='payment-message']"));
 	Assert.assertEquals(WebUI.getTextElement(By.xpath("//div[@id='payment-message']")),
 			"Your card’s expiration year is in the past.");
+}
+
+public void dashboardbutton() {
+	// TODO Auto-generated method stub
+	WebUI.clickElement(By.xpath("//a[@class='thank-you_button']"));
 }
 }

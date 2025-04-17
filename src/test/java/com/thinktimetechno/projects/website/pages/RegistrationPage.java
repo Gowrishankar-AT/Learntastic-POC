@@ -1,9 +1,13 @@
 package com.thinktimetechno.projects.website.pages;
 
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import com.thinktimetechno.driver.DriverManager;
@@ -82,16 +86,19 @@ public class RegistrationPage {
 
 	public void dashboardassertion01() {
 		WebUI.waitForPageLoaded();
-		Assert.assertEquals(WebUI.getPageTitle(), "Online Courses and Career Opportunities");
+		WebDriverWait wait=new WebDriverWait(DriverManager.getDriver(),Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.titleContains("Purchased courses list | Learntastic"));
+		
+		Assert.assertEquals(WebUI.getPageTitle(), "Purchased courses list | Learntastic");
 
 	}
 
 	public void registerassertion() {
 		WebUI.waitForPageLoaded();
 		Assert.assertEquals(WebUI.getPageTitle(), "Register | learntastic | online courses");
-		WebUI.waitForElementVisible(
-				By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"), 10);
-		WebUI.clickElement(By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"));
+//		WebUI.waitForElementVisible(
+//				By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"), 10);
+//		WebUI.clickElement(By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"));
 		if (WebUI.verifyElementExists(
 				By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"))) {
 			WebUI.moveToElement(By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"));
@@ -145,9 +152,13 @@ public class RegistrationPage {
 	}
 
 	public void joinforfree() throws InterruptedException {
-		WebUI.waitForElementVisible(
-				By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"));
-		WebUI.clickElement(By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"));
+		
+				if (WebUI.verifyElementExists(
+						By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"))) {
+					WebUI.moveToElement(By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"));
+					WebUI.clickElementWithJs(
+							By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"));
+				}
 		WebUI.clickElementWithJs(
 				By.xpath("//div[@class='home-item_desc']/descendant::button[contains(text(),'Join for free')]"));
 

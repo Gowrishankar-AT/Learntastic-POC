@@ -9,13 +9,7 @@ public class CorporateLoginPage {
 
 	public void hiturl(String url) {
 		WebUI.getURL(url);
-		WebUI.clickElementWithJs(By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"));
-		if (WebUI.verifyElementExists(
-				By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"))) {
-			WebUI.moveToElement(By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"));
-			WebUI.clickElementWithJs(
-					By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"));
-		}
+	
 
 	}
 
@@ -25,8 +19,17 @@ public class CorporateLoginPage {
 	}
 
 	public void username(String username) {
-
-		WebUI.setText(By.xpath("//input[@id='email']"), username);
+		if (WebUI.verifyElementExists(
+				By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"))) {
+			WebUI.moveToElement(By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"));
+			WebUI.clickElementWithJs(
+					By.xpath("//div[@class='modal-content']/div/button[@class='close dis-modal-close']"));
+		}
+		WebUI.waitForElementClickable(By.xpath("//input[@id='email']"));
+		 WebUI.getJsExecutor().executeScript(
+		            "document.getElementById('email').value = '" + username.replace("'", "\\'") + "';");
+//WebUI.waitForElementClickable(By.xpath("//input[@id='email']"));
+//		WebUI.setText(By.xpath("//input[@id='email']"), username);
 		WebUI.clickElementWithJs(By.xpath("//button[contains(text(),'Continue')]"));
 
 	}

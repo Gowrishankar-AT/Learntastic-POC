@@ -1,5 +1,5 @@
 @GroupUserFulltest @Fulltest
-Feature: Learntastic for Group User
+Feature: C_TC_12_Invite_Employees_via_Email
 
   @C_TC_12_Invite_Employees_via_Email
   Scenario: TC_12 Validate Employee invite via Email

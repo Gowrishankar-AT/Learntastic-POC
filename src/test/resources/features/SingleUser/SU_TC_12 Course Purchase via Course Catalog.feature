@@ -1,5 +1,5 @@
 @SingleUserFulltest @Fulltest
-Feature: Learntastic for Group User
+Feature: SU_TC_12_Course_Purchase_via_Course_Catalog
 
   @SU_TC_12_Course_Purchase_via_Course_Catalog
   Scenario: TC_12 Course Purchase from Course Catalog for User

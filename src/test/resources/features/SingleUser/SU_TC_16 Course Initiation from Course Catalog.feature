@@ -1,5 +1,5 @@
 @SingleUserFulltest @Fulltest
-Feature: Learntastic for Single User
+Feature: SU_TC_16_Course_Initiation_from_store_purchase
 
   @SU_TC_16_Course_Initiation_from_store_purchase
   Scenario: TC_16 Course Initiation from store purchase for User

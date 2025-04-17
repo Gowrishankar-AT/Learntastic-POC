@@ -1,5 +1,5 @@
 @SingleUserFulltest @Fulltest
-Feature: Learntastic for Single User
+Feature: SU_TC_15_Course_Initiation_from_dashboard
 
   @SU_TC_15_Course_Initiation_from_dashboard
   Scenario: TC_15 Course Initiation from Dashboard for User

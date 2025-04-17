@@ -1,5 +1,5 @@
 @SingleUserFulltest @Fulltest
-Feature: Learntastic for Single User
+Feature: SU_TC_03_Register_via_JoinForFree
 
   @SU_TC_03_Register_via_JoinForFree
   Scenario: TC_03 Registration via "Join for Free" Pop-up

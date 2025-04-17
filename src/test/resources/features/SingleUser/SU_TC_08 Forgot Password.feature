@@ -1,5 +1,5 @@
 @SingleUserFulltest @Fulltest
-Feature: Learntastic for Single User
+Feature: SU_TC_08_Forgot_Password
 
   @SU_TC_08_Forgot_Password
   Scenario: TC_08 Verify Forgot Password page
