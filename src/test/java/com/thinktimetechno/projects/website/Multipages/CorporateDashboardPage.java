@@ -63,16 +63,16 @@ public class CorporateDashboardPage {
 		WebUI.setText(By.xpath("//input[@role='searchbox']"), courseName);
 
 		WebUI.waitForElementVisible(By
-				.xpath("//ul[@class='select2-results__options']/child::li[contains(text(),'Healthcare, First Aid')]"));
+				.xpath("//ul[@class='select2-results__options']/child::li[contains(text(),'"+courseName+"')]"));
 		WebElement listElement = WebUI.getWebElement(By
-				.xpath("//ul[@class='select2-results__options']/child::li[contains(text(),'Healthcare, First Aid')]"));
+				.xpath("//ul[@class='select2-results__options']/child::li[contains(text(),'"+courseName+"')]"));
 
 		listElement.click();
 		WebUI.waitForPageLoaded();
-		String CourseTitile = WebUI.getTextElement(By.xpath(
-				"//div[@class='allcourses-item_title']/descendant::h3[contains(text(),'Healthcare, First Aid')]"))
+		String CourseTitle = WebUI.getTextElement(By.xpath(
+				"//div[@class='allcourses-item_title']/descendant::h3[contains(text(),'"+courseName+"')]"))
 				.trim();
-		Assert.assertEquals(courseName, CourseTitile);
+		Assert.assertEquals(courseName, CourseTitle);
 	}
 
 

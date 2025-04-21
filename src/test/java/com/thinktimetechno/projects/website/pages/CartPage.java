@@ -49,4 +49,15 @@ public class CartPage {
 		// TODO Auto-generated method stub
 		Assert.assertEquals(WebUI.getTextElement(By.xpath("//div[normalize-space()='A calendar invitation has been sent to your email address.']")), "A calendar invitation has been sent to your email address.");
 	}
+
+	public void discount(String string) {
+		// TODO Auto-generated method stub
+		WebUI.setText(By.xpath("//input[@id='coupon_input']"), string);
+		WebUI.clickElement(By.xpath("//button[@id='btn_submit_cart']"));
+	}
+
+	public void error() {
+		// TODO Auto-generated method stub
+		Assert.assertEquals(WebUI.getTextElement(By.xpath("//span[@id='invalid-feedback-coupon']")), "Invalid coupon, make sure it is correct.");
+	}
 }

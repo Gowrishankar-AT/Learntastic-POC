@@ -20,7 +20,7 @@ public class CorporateDistributionPage {
 		WebUI.clickElement(By.xpath("//a[@class='employees-purchase_code']"));
 	}
 
-	public void codesassign() {
+	public void codesassign() throws InterruptedException {
 		// TODO Auto-generated method stub
 	
 		
@@ -28,12 +28,17 @@ public class CorporateDistributionPage {
 		WebUI.clickElement(By.xpath("//label[normalize-space()='Purchase Code']/following-sibling::span/span/span"));
 	     WebUI.setText(By.xpath("//input[@class='select2-search__field']"), code);
 		WebUI.moveToElement(By.xpath("//li[contains(text(),RASHM)]"));
+		Thread.sleep(10000);
 		WebUI.clickElementWithJs(By.xpath("//li[contains(text(),RASHM)]"));
+		//WebUI.setText(By.xpath("//span[@id='select2-modal_code-jt-container']"), code);
 		WebUI.clickElement(By.xpath("//label[normalize-space()='Purchase Code']"));
 		WebUI.clickElement(By.xpath("//label[normalize-space()='Select Employee']/following-sibling::span/span/span"));
 		WebUI.waitForElementVisible(By.xpath("//option[normalize-space()='John1 Doe']"), 10);
 		WebUI.moveToElement(By.xpath("//option[normalize-space()='John1 Doe']"));
+		
+		Thread.sleep(10000);
 		WebUI.clickElementWithJs(By.xpath("//option[normalize-space()='John1 Doe']"));
+	//	WebUI.setText(By.xpath("//span[@id='select2-modal_student-sx-container']"), "John1 Doe");
 	//	WebUI.selectOptionByText(By.xpath("//select[@class='form-control modal_student_select2 w-100 select2-hidden-accessible']"), "John1 Doe");
 	}
 

@@ -14,7 +14,7 @@ public class CorporateLoginPage {
 	}
 
 	public void password(String password) {
-		WebUI.setText(By.xpath("//input[@name='password']"), password);
+		WebUI.setText(By.xpath("//input[@id='password']"), password);
 		WebUI.clickElement(By.xpath("//button[contains(.,'Login')]"));
 	}
 

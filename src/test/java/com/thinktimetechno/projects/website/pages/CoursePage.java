@@ -54,82 +54,93 @@ public class CoursePage {
 				
 				WebUI.waitForElementVisible(By.xpath("//h1[@class='visually-hidden-always']/following-sibling::div[normalize-space()='01/13']"), 10);
 				WebUI.clickElementWithJs(By.xpath("//p[contains(text(), 'How to protect yourself and others should you be exposed to blood or blood-containing materials')]"));
-				WebUI.clickElementWithJs(By.xpath("//button[contains(text(), 'Continue')]"));
-				WebUI.clickElementWithJs(By.xpath("//button[@class='quiz-card__button quiz-card__button--next brand_ui visually-hidden-always']"));
-				Thread.sleep(5000);
+				WebUI.clickElementWithJs(By.xpath("//button[normalize-space()='Continue'   and not(@aria-hidden='true')]"));
+				
+				
 				
 			}else if(i==1) {
 				WebUI.waitForElementVisible(By.xpath("//h1[@class='visually-hidden-always']/following-sibling::div[normalize-space()='02/13']"), 10);
 				WebUI.clickElementWithJs(By.xpath("//p[contains(text(), 'All of the above')]"));
-				WebUI.clickElementWithJs(By.xpath("//button[contains(text(), 'Continue')]"));
-				WebUI.clickElementWithJs(By.xpath("//button[@class='quiz-card__button quiz-card__button--next brand_ui visually-hidden-always']"));
-				Thread.sleep(5000);
+				WebUI.clickElementWithJs(By.xpath("//button[normalize-space()='Continue'   and not(@aria-hidden='true')]"));
+				WebUI.clickElementWithJs(By.xpath("//a[normalize-space()='Chapter 7: Reporting an Incident']"));
+				WebUI.clickElementWithJs(By.xpath("//a[normalize-space()='Quiz']"));
+				
 			}else if(i==2) {
 				WebUI.waitForElementVisible(By.xpath("//h1[@class='visually-hidden-always']/following-sibling::div[normalize-space()='03/13']"), 10);
 				WebUI.clickElementWithJs(By.xpath("//p[contains(text(), 'It weakens your immune system by attacking infection-fighting cells')]"));
-				WebUI.clickElementWithJs(By.xpath("//button[contains(text(), 'Continue')]"));
-				WebUI.clickElementWithJs(By.xpath("//button[@class='quiz-card__button quiz-card__button--next brand_ui visually-hidden-always']"));
-				Thread.sleep(5000);
+				WebUI.clickElementWithJs(By.xpath("//button[normalize-space()='Continue'   and not(@aria-hidden='true')]"));
+				WebUI.clickElementWithJs(By.xpath("//a[normalize-space()='Chapter 7: Reporting an Incident']"));
+				WebUI.clickElementWithJs(By.xpath("//a[normalize-space()='Quiz']"));
+				
 			}else if(i==3) {
 				WebUI.waitForElementVisible(By.xpath("//h1[@class='visually-hidden-always']/following-sibling::div[normalize-space()='04/13']"), 10);
 				WebUI.clickElementWithJs(By.xpath("//p[contains(text(), 'TRUE')]"));
-				WebUI.clickElementWithJs(By.xpath("//button[contains(text(), 'Continue')]"));
-				WebUI.clickElementWithJs(By.xpath("//button[@class='quiz-card__button quiz-card__button--next brand_ui visually-hidden-always']"));
-				Thread.sleep(5000);
+				WebUI.clickElementWithJs(By.xpath("//button[normalize-space()='Continue'   and not(@aria-hidden='true')]"));
+				WebUI.clickElementWithJs(By.xpath("//a[normalize-space()='Chapter 7: Reporting an Incident']"));
+				WebUI.clickElementWithJs(By.xpath("//a[normalize-space()='Quiz']"));
+				
 			}else if(i==4) {
 				WebUI.waitForElementVisible(By.xpath("//h1[@class='visually-hidden-always']/following-sibling::div[normalize-space()='05/13']"), 10);
 				WebUI.clickElementWithJs(By.xpath("//p[contains(text(), 'Liver')]"));
-				WebUI.clickElementWithJs(By.xpath("//button[contains(text(), 'Continue')]"));
-				WebUI.clickElementWithJs(By.xpath("//button[@class='quiz-card__button quiz-card__button--next brand_ui visually-hidden-always']"));
-				Thread.sleep(5000);
+				WebUI.clickElementWithJs(By.xpath("//button[normalize-space()='Continue'   and not(@aria-hidden='true')]"));
+				WebUI.clickElementWithJs(By.xpath("//a[normalize-space()='Chapter 7: Reporting an Incident']"));
+				WebUI.clickElementWithJs(By.xpath("//a[normalize-space()='Quiz']"));
+				
 			}else if(i==5) {
 				WebUI.waitForElementVisible(By.xpath("//h1[@class='visually-hidden-always']/following-sibling::div[normalize-space()='06/13']"), 10);
 				WebUI.clickElementWithJs(By.xpath("//p[contains(text(), 'Goggles (eye protection)')]"));
-				WebUI.clickElementWithJs(By.xpath("//button[contains(text(), 'Continue')]"));
-				WebUI.clickElementWithJs(By.xpath("//button[@class='quiz-card__button quiz-card__button--next brand_ui visually-hidden-always']"));
-				Thread.sleep(5000);
+				WebUI.clickElementWithJs(By.xpath("//button[normalize-space()='Continue'   and not(@aria-hidden='true')]"));
+				WebUI.clickElementWithJs(By.xpath("//a[normalize-space()='Chapter 7: Reporting an Incident']"));
+				WebUI.clickElementWithJs(By.xpath("//a[normalize-space()='Quiz']"));
+				
 			}else if(i==6) {
 				WebUI.waitForElementVisible(By.xpath("//h1[@class='visually-hidden-always']/following-sibling::div[normalize-space()='07/13']"), 10);
 				WebUI.clickElementWithJs(By.xpath("//p[contains(text(), 'Check if the scene is safe for you')]"));
-				WebUI.clickElementWithJs(By.xpath("//button[contains(text(), 'Continue')]"));
-				WebUI.clickElementWithJs(By.xpath("//button[@class='quiz-card__button quiz-card__button--next brand_ui visually-hidden-always']"));
-				Thread.sleep(5000);
+				WebUI.clickElementWithJs(By.xpath("//button[normalize-space()='Continue'   and not(@aria-hidden='true')]"));
+				WebUI.clickElementWithJs(By.xpath("//a[normalize-space()='Chapter 7: Reporting an Incident']"));
+				WebUI.clickElementWithJs(By.xpath("//a[normalize-space()='Quiz']"));
+				
 			}else if(i==7) {
 				WebUI.waitForElementVisible(By.xpath("//h1[@class='visually-hidden-always']/following-sibling::div[normalize-space()='08/13']"), 10);
 				WebUI.clickElementWithJs(By.xpath("//p[contains(text(), 'Wash your hands with soap and large amounts of water')]"));
-				WebUI.clickElementWithJs(By.xpath("//button[contains(text(), 'Continue')]"));
-				WebUI.clickElementWithJs(By.xpath("//button[@class='quiz-card__button quiz-card__button--next brand_ui visually-hidden-always']"));
-				Thread.sleep(5000);
+				WebUI.clickElementWithJs(By.xpath("//button[normalize-space()='Continue'   and not(@aria-hidden='true')]"));
+				WebUI.clickElementWithJs(By.xpath("//a[normalize-space()='Chapter 7: Reporting an Incident']"));
+				WebUI.clickElementWithJs(By.xpath("//a[normalize-space()='Quiz']"));
+				
 			}else if(i==8) {
 				WebUI.waitForElementVisible(By.xpath("//h1[@class='visually-hidden-always']/following-sibling::div[normalize-space()='09/13']"), 10);
 				WebUI.clickElementWithJs(By.xpath("//p[contains(text(), 'All of the above')]"));
-				WebUI.clickElementWithJs(By.xpath("//button[contains(text(), 'Continue')]"));
-				WebUI.clickElementWithJs(By.xpath("//button[@class='quiz-card__button quiz-card__button--next brand_ui visually-hidden-always']"));
-				Thread.sleep(5000);
+				WebUI.clickElementWithJs(By.xpath("//button[normalize-space()='Continue'   and not(@aria-hidden='true')]"));
+				WebUI.clickElementWithJs(By.xpath("//a[normalize-space()='Chapter 7: Reporting an Incident']"));
+				WebUI.clickElementWithJs(By.xpath("//a[normalize-space()='Quiz']"));
+				
 			}else if(i==9) {
 				WebUI.waitForElementVisible(By.xpath("//h1[@class='visually-hidden-always']/following-sibling::div[normalize-space()='10/13']"), 10);
 				WebUI.clickElementWithJs(By.xpath("//p[contains(text(), 'Puncture-resistant, sharps disposal container')]"));
-				WebUI.clickElementWithJs(By.xpath("//button[contains(text(), 'Continue')]"));
-				WebUI.clickElementWithJs(By.xpath("//button[@class='quiz-card__button quiz-card__button--next brand_ui visually-hidden-always']"));
-				Thread.sleep(5000);
+				WebUI.clickElementWithJs(By.xpath("//button[normalize-space()='Continue'   and not(@aria-hidden='true')]"));
+				WebUI.clickElementWithJs(By.xpath("//a[normalize-space()='Chapter 7: Reporting an Incident']"));
+				WebUI.clickElementWithJs(By.xpath("//a[normalize-space()='Quiz']"));
+				
 			}else if(i==10) {
 				WebUI.waitForElementVisible(By.xpath("//h1[@class='visually-hidden-always']/following-sibling::div[normalize-space()='11/13']"), 10);
 				WebUI.clickElementWithJs(By.xpath("//p[contains(text(), 'Must have a fluorescent orange background with the international biohazard symbol')]"));
-				WebUI.clickElementWithJs(By.xpath("//button[contains(text(), 'Continue')]"));
-				WebUI.clickElementWithJs(By.xpath("//button[@class='quiz-card__button quiz-card__button--next brand_ui visually-hidden-always']"));
-				Thread.sleep(5000);
+				WebUI.clickElementWithJs(By.xpath("//button[normalize-space()='Continue'   and not(@aria-hidden='true')]"));
+				WebUI.clickElementWithJs(By.xpath("//a[normalize-space()='Chapter 7: Reporting an Incident']"));
+				WebUI.clickElementWithJs(By.xpath("//a[normalize-space()='Quiz']"));
+				
 			}else if(i==11) {
 				WebUI.waitForElementVisible(By.xpath("//h1[@class='visually-hidden-always']/following-sibling::div[normalize-space()='12/13']"), 10);
 				WebUI.clickElementWithJs(By.xpath("//p[contains(text(), 'Engineering and work practice controls')]"));
-				WebUI.clickElementWithJs(By.xpath("//button[contains(text(), 'Continue')]"));
-				WebUI.clickElementWithJs(By.xpath("//button[@class='quiz-card__button quiz-card__button--next brand_ui visually-hidden-always']"));
-				Thread.sleep(5000);
+				WebUI.clickElementWithJs(By.xpath("//button[normalize-space()='Continue'   and not(@aria-hidden='true')]"));
+				WebUI.clickElementWithJs(By.xpath("//a[normalize-space()='Chapter 7: Reporting an Incident']"));
+				WebUI.clickElementWithJs(By.xpath("//a[normalize-space()='Quiz']"));
+				
 			}else if(i==12) {
 				WebUI.waitForElementVisible(By.xpath("//h1[@class='visually-hidden-always']/following-sibling::div[normalize-space()='13/13']"), 10);
-				WebUI.clickElementWithJs(By.xpath("//p[contains(text(), 'Immediately report the incident to your employer and follow the company's exposure control plan')]"));
-				WebUI.clickElementWithJs(By.xpath("//button[contains(text(), 'Continue')]"));
-				WebUI.clickElementWithJs(By.xpath("//button[@class='quiz-card__button quiz-card__button--next brand_ui visually-hidden-always']"));
-				Thread.sleep(5000);
+				WebUI.clickElementWithJs(By.xpath("//p[contains(text(), 'Immediately report the incident to your employer and follow the')]"));
+				WebUI.clickElementWithJs(By.xpath("//button[normalize-space()='Continue'   and not(@aria-hidden='true')]"));
+
+				
 			}
 		}
 	}

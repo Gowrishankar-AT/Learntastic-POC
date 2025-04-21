@@ -230,7 +230,7 @@ public class DashboardPage {
 
 	public void date() {
 		// TODO Auto-generated method stub
-		WebUI.clickElement(By.xpath("//tbody[@class='Aotd61pQB2RgLNgE8RLW lIf10GjoKhYqSmG1emYW TYMa2uo5vWyKygqXJbv3']/tr/td/button[not(@disabled)]S"));
+		WebUI.clickElement(By.xpath("//tbody[@class='Aotd61pQB2RgLNgE8RLW lIf10GjoKhYqSmG1emYW TYMa2uo5vWyKygqXJbv3']/tr/td/button[not(@disabled)]"));
 		WebUI.clickElement(By.xpath("//div[@class='H2wiGo__wRvJJKM0eaOr S4EQ84F_9sWOFYZ9_sX7']"));
 		WebUI.clickElement(By.xpath("//button[normalize-space()='Next']"));
 	}

@@ -9,7 +9,7 @@ public class CorporateCartPage {
 public void addtocart() {
 		
 		WebUI.clickElement(By.xpath(
-				"//div[@class='allcourses_list-item']/child::div/descendant::h3[contains(text(),'Healthcare, First Aid')]/ancestor::div[@class='allcourses_list-item']/descendant::div[@class='allcourses-item_bottom']/descendant::button[@class='allcourses_button']"));
+				"//div[@class='allcourses_list-item']/child::div/descendant::h3[contains(text(),'')]/ancestor::div[@class='allcourses_list-item']/descendant::div[@class='allcourses-item_bottom']/descendant::button[@class='allcourses_button']"));
 	}
 
 public void proceedtocheckout() {

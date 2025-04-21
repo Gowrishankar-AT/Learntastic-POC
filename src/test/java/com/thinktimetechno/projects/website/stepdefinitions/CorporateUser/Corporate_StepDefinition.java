@@ -471,7 +471,7 @@ public class Corporate_StepDefinition {
 		corporatedistributionPage.assigncode();
 	}
 	@When("GroupUser selects the purchase code and employee")
-	public void group_user_selects_the_purchase_code_and_employee() {
+	public void group_user_selects_the_purchase_code_and_employee() throws InterruptedException {
 		corporatedistributionPage.codesassign();
 	}
 	@When("GroupUser selects the Assign code and save changes")

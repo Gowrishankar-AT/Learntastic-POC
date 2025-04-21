@@ -607,4 +607,13 @@ public class SingleUser_StepDefinition {
 	public void user_schedules_the_training() {
 	    cartPage.virtual();
 	}
+	//SU_TC_26
+	@Given("User enters the Discount code as {string}")
+	public void user_enters_the_discount_code_as(String string) {
+	    cartPage.discount(string);
+	}
+	@Then("User should able to see error message")
+	public void user_should_able_to_see_error_message() {
+	    cartPage.error();
+	}
 }
