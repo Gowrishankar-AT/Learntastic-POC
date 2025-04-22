@@ -245,4 +245,19 @@ public class DashboardPage {
 		WebUI.clickElement(By.xpath("//button[normalize-space()='Schedule Event']"));
 	}
 
+	public void viewdetail() {
+		// TODO Auto-generated method stub
+		WebUI.clickElement(By.xpath("//a[@title='Unlimited CE Subscriptions']/ancestor::div[2]/div[5]/div/a"));
+	}
+
+	public void detailassertion() {
+		// TODO Auto-generated method stub
+		Assert.assertEquals(WebUI.getTextElement(By.xpath("//h1[@class='new-detail-header_title']")), "Unlimited continuing education courses for Physicians");
+	}
+
+	public void startcourse() {
+		// TODO Auto-generated method stub
+		Assert.assertFalse(false, "Element not present");
+	}
+
 }

@@ -575,6 +575,20 @@ public class SingleUser_StepDefinition {
 	public void user_navigated_to_the_cart_page() {
 	    cartPage.cartassertion("CE Certificate");
 	}
+	//C_TC_23
+	
+	@Given("User Clicks on the view detail")
+	public void user_clicks_on_the_view_detail() {
+	   dashboardPage.viewdetail();
+	}
+	@Given("User navigated to the detail page")
+	public void user_navigated_to_the_detail_page() {
+	    dashboardPage.detailassertion();
+	}
+	@Then("User not able to view the start course button")
+	public void user_not_able_to_view_the_start_course_button() {
+	    dashboardPage.startcourse();
+	}
 	
 	//C_TC_24
 	@When("User clicks on the desired session and selects the course")
