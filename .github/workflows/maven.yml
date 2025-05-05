@@ -2,6 +2,11 @@ name: Run Selenium Test & Upload Extent Report
 
 on:
   workflow_dispatch:
+    inputs:
+      confluence_value:
+        description: 'Value from Confluence'
+        required: true
+        type: string
 
 jobs:
   run-tests:
@@ -27,8 +32,9 @@ jobs:
           pip install google-api-python-client google-auth google-auth-oauthlib
 
       - name: Run Maven Test to Generate Extent Report
-        run: mvn clean test -Dcucumber.filter.tags=@SU_TC01_Register_with_valid_credentials
-
+        run: |
+          echo "Running tests with input: ${{ github.event.inputs.confluence_value }}"
+          mvn clean test -Dcucumber.filter.tags=${{ github.event.inputs.confluence_value }}
       - name: Upload Latest SparkReport to Google Drive
         env:
           GDRIVE_CREDENTIALS: ${{ secrets.GDRIVE_CREDENTIALS }}
